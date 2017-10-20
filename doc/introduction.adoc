@@ -1,0 +1,67 @@
+
+== Introduction
+
+MoonCL is an (almost) one-to-one Lua binding library to the OpenCL API.
+It provide means to implement the host part of OpenCL applications using Lua instead
+of C or pass:[C++], with all its pros and cons.
+
+////
+ and with the limitations listed in the 
+<<implementation_notes, 'Implementation notes'>> section.
+////
+
+This section gives a brief overview, while the details of the bindings are given 
+in the sections that follow.
+
+As a general rule, OpenCL API *functions* are bound to by MoonCL functions whose names
+are https://en.wikipedia.org/wiki/Snake_case[snake_case] versions of the original ones
+(for example, _clGetPlatformIDs_(&nbsp;) is bound to by _cl.get_platform_ids_(&nbsp;)).
+
+If not stated otherwise, *on error* all MoonCL functions raise a 
+http://www.lua.org/manual/5.3/manual.html#lua_error[Lua error]. 
+If needed, this behaviour can be overridden by wrapping function calls in the standard Lua 
+http://www.lua.org/manual/5.3/manual.html#pdf-pcall[pcall](&nbsp;).
+
+MoonCL binds OpenCL *objects* (_platform_, _device_, etc.) to Lua userdata, which are 
+returned by the creating or getter functions 
+(_cl.get_platform_ids_(&nbsp;), _cl.create_context_(&nbsp;), etc) and are then used to 
+refer to objects in Lua in the same way as one would use OpenCL handles in C.
+
+In the rest of this manual we will refer to userdata bound to OpenCL objects as to just 'objects',
+or as 'MoonCL objects' (vs. 'OpenCL objects') when there is need for disambiguation.
+
+////
+Occasionally, the actual OpenCL *handles* may be needed by the Lua code, mainly to interoperate
+in very dangerous ways with other libraries that access the OpenCL API directly. 
+Handles can be retrieved with the <<method_raw, raw>>(&nbsp;) method that every object has.
+////
+
+Objects are *garbage collected at exit* (which includes on error), and automatically
+released at the OpenCL level, so there is no need to explicitly invoke the bindings
+to _clReleaseXxx_(&nbsp;) at exit for cleanup. 
+
+Apart from at exit, however, objects are not automatically garbage collected 
+footnote:[Objects are anchored to the Lua registry at their creation, so even if the script does not
+have references to an object, a reference always exists on the registry and this prevents the 
+GC to collect it.]
+and one must release them explicitly when needed, e.g. to release resources when the
+application is not exiting and some objects are no longer needed.
+
+Releasing an object causes the automatic (pre) destruction of all its children
+objects, and the invalidation of any reference to the object and to its children.
+footnote:[It is good practice to not leave invalid references to objects around, because
+they prevent the GC to collect the memory associated with the userdata.]
+
+OpenCL *structs* (and lists, and arrays) used to pass parameters and results across the OpenCL API 
+are mapped in MoonCL to tables, having more or less the same contents as their C counterparts
+but again with https://en.wikipedia.org/wiki/Snake_case[snake_case] named fields.
+*Enumerations* are mapped to/from sets of string literals, while *flags* bitmasks are represented
+as plain integers encoded in the same way as in C.
+More details are given in the respective sections of this document 
+(<<structs, structs>>, <<enums, enums>>, <<flags, flags>>).
+
+In addition to the bindings to the OpenCL API, which are described in the sections that follow, 
+MoonCL also provides a few other utilities and object 'methods' that do not correspond
+to OpenCL functions.
+These are described mainly in the <<miscellanea, 'Miscellanea'>> subsections.
+

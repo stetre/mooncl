@@ -1,0 +1,20 @@
+
+[[sampler]]
+=== sampler
+
+[[create_sampler]]
+* _sampler_ = *create_sampler*(<<context, _context_>>, [<<samplerproperties, _samplerproperties_>>]) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateSamplerWithProperties.html[clCreateSamplerWithProperties].#
+
+[[retain_sampler]]
+* *retain_sampler*(_sampler_) +
+*release_sampler*(_sampler_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainSampler.html[clRetainSampler] - 
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseSampler.html[clReleaseSampler].#
+
+
+[[get_sampler_info]]
+* _value_ = *get_sampler_info*(_sampler_, <<samplerinfo, _samplerinfo_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetSamplerInfo.html[clGetSamplerInfo].#
+
+

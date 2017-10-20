@@ -1,0 +1,43 @@
+
+[[device]]
+=== device
+
+[[get_device_ids]]
+* {_device_} = *get_device_ids*(<<platform, _platform_>>, <<devicetypeflags, _devicetypeflags_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetDeviceIDs.html[clGetDeviceIDs].#
+
+[[create_sub_devices]]
+* {_device_} = *create_sub_devices*(_device_, <<devicepartitionproperty, _devicepartitionproperty_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateSubDevices.html[clCreateSubDevices].#
+
+
+[[retain_device]]
+* *retain_device*(_device_) +
+*release_device*(_device_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainDevice.html[clRetainDevice] - 
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseDevice.html[clReleaseDevice].#
+
+
+[[get_device_info]]
+* _value_ = *get_device_info*(_device_, <<deviceinfo, _deviceinfo_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetDeviceInfo.html[clGetDeviceInfo].#
+
+[[set_default_device_command_queue]]
+* *set_default_device_command_queue*(<<context, _context_>>, <<device, _device_>>, <<queue, _queue_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetDefaultDeviceCommandQueue.html[clSetDefaultDeviceCommandQueue].#
+
+
+[[get_device_and_host_timer]]
+* _device_timestamp_, _host_timestamp_ = *get_device_and_host_timer*(_device_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetDeviceAndHostTimer.html[clGetDeviceAndHostTimer].#
+
+
+[[get_host_timer]]
+* _host_timestamp_ = *get_host_timer*(_device_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetHostTimer.html[clGetHostTimer].#
+
+[[check_endianness]]
+* _boolean_, _endianness_ = *check_endianness*(_device_) +
+[small]#Returns _true_ if _device_ has the same endianness of the host, _false_ otherwise. +
+The second return value is a string indicating the endianness of the device ('_little_' or '_big_').#
+

@@ -1,0 +1,60 @@
+
+[[commonmethods]]
+=== Common methods
+
+The following methods are common to MoonCL <<objects, objects>>.
+
+[[method_raw]]
+* _handle_ = object++:++*raw*( ) +
+[small]#Returns the raw OpenCL handle for the given object in a lightuserdata (e.g. _platform:raw(&nbsp;)_
+returns a lightuserdara containing a _cl_platform_id_).#
+
+[[method_type]]
+* _typestring_ = object++:++*type*( ) +
+_typestring_ = *cl.type*(_object_) +
+[small]#object: any object type. +
+Returns a string denoting the type of the given object (e.g. _platform:type(&nbsp;)_
+returns '_platform_'). +
+The *cl.type*(&nbsp;) function returns _nil_ if _object_ is not a valid MoonCL object.#
+
+[[method_parent]]
+* _parent_ = object++:++*parent*( ) +
+[small]#object: any object type. +
+Returns the parent object of the given object, or _nil_ if it has no parent.#
+
+[[method_platform]]
+* <<platform, _platform_>> = object++:++*platform*( ) +
+[small]#object: <<device, device>> | <<context, context>> | <<queue, queue>>. +
+Returns the platform the given object belongs to.#
+
+[[method_device]]
+* <<device, _device_>> = object++:++*device*( ) +
+[small]#object: <<queue, queue>>. +
+Returns the device the given object belongs to.#
+
+[[method_context]]
+* <<context, _context_>> = object++:++*context*( ) +
+[small]#object: <<queue, queue>> | <<program, program>> | <<event, event>> | <<buffer, buffer>> | <<image, image>> | <<pipe, pipe>> | <<sampler, sampler>> | <<svm, svm>>. +
+Returns the context the given object belongs to.#
+
+[[method_program]]
+* <<program, _program_>> = object++:++*program*( ) +
+[small]#object: <<kernel, kernel>>. +
+Returns the program the given object belongs to.#
+
+
+////
+[[]]
+* <<,__>> = **(_xxx_) +
+[small]##
+
+[small]#object: <<platform, platform>> | <<device, device>> | <<context, context>> | <<queue, queue>> | <<program, program>> | <<kernel, kernel>> | <<event, event>> | <<buffer, buffer>> | <<image, image>> | <<pipe, pipe>> | <<sampler, sampler>> | <<svm, svm>> | <<hostmem, hostmem>>#
+
+arg3 - __: integer +
+arg3 - __: <<, >> +
+arg3 - __: {<<, >>} +
+arg3 - __: <<, >> (opt.) +
+arg3 - __: {<<, >>} (opt.) +
+
+////
+

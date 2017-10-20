@@ -1,0 +1,86 @@
+
+[[structs]]
+== Structs
+
+* [[contextproperties]]
+[small]#*contextproperties* = { +
+_platform_: <<platform, platform>> (opt.), +
+_interop_user_sync_: boolean (opt.), +
+_context_terminate_: boolean (opt.), +
+_gl_context_: lightuserdata or 0 (opt.), +
+_cgl_sharegroup_: lightuserdata or 0 (opt.), +
+_glx_display_: lightuserdata or 0 (opt.), +
+_egl_display_: lightuserdata or 0 (opt.), +
+_wgl_hdc_: lightuserdata or 0 (opt.), +
+} (rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateContext.html[clCreateContext])#
+
+* [[devicepartitionproperty]]
+[small]#*devicepartitionproperty* = { +
+pass:[--] _Note: the following fields are mutually exclusive:_ +
+_equally_: integer, +
+_by_affinity_domain_: <<affinitydomainflags, affinitydomainflags>>, +
+_by_counts_: {integer}, +
+} (rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateSubDevices.html[clCreateSubDevices])#
+
+* [[devicesupportedpartitionproperty]]
+[small]#*devicesupportedpartitionproperty* = { +
+_equally_: boolean, +
+_by_affinity_domain_: boolean, +
+_by_counts_: boolean, +
+} (rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetDeviceInfo.html[clGetDeviceInfo])#
+
+* [[imagedesc]]
+[small]#*imagedesc* = { +
+_type_: <<memobjecttype, memobjecttype>>, +
+_width_: integer (defaults to 1), +
+_height_: integer (defaults to 1), +
+_depth_: integer (defaults to 1), +
+_array_size_: integer (defaults to 1), +
+_row_pich_: integer (defaults to 0), +
+_slice_pitch_: integer (defaults to 0), +
+_num_mip_levels_: integer (default to 0), +
+_num_samples_: integer (default to 0), +
+_buffer_: <<buffer, buffer>> (opt.),  +
+_image_: <<image, image>> (opt., ignored if _buffer_ is present), +
+} (rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/cl_image_desc.html[cl_image_desc])#
+
+* [[imageformat]]
+[small]#*imageformat* = { +
+_channel_order_: <<channelorder, channelorder>>, +
+_channel_type_: <<channeltype, channeltype>>, +
+} (rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/cl_image_format.html[cl_image_format])#
+
+* [[pipeproperties]]
+[small]#*pipeproperties* = { +
+_-- reserved for future use_ +
+}#
+
+* [[queueproperties]]
+[small]#*queueproperties* = { +
+_properties_: <<queueflags, queueflags>> (opt.), +
+_size_: integer (opt.), +
+_queue_priority_: <<queuepriority, queuepriority>> (opt.), +
+_queue_throttle_: <<queuethrottle, queuethrottle>> (opt.), +
+} (rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateCommandQueueWithProperties.html[clCreateCommandQueueWithProperties])#
+
+* [[samplerproperties]]
+[small]#*samplerproperties* = { +
+_normalized_coords_: boolean, +
+_addressing_mode_: <<addressingmode, addressingmode>>, +
+_filter_mode_: <<filtermode, filtermode>>, +
+} (rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateSamplerWithProperties.html[clCreateSamplerWithProperties])#
+
+////
+* [[]]
+[small]#** = { +
+}#
+
+__: string, +
+__: boolean, +
+__: float, +
+__: integer, +
+__: <<, >>, +
+__: {<<, >>}, +
+
+////
+

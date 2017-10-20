@@ -1,0 +1,19 @@
+
+[[queue]]
+=== queue
+
+[[create_command_queue]]
+* _queue_ = *create_command_queue*(<<context, _context_>>, <<device, _device_>>, [<<queueproperties, _queueproperties_>>]) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateCommandQueueWithProperties.html[clCreateCommandQueueWithProperties].#
+
+[[retain_command_queue]]
+* *retain_command_queue*(_queue_) +
+*release_command_queue*(_queue_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainCommandQueue.html[clRetainCommandQueue] -
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseCommandQueue.html[clReleaseCommandQueue].#
+
+[[get_command_queue_info]]
+* _value_ = *get_command_queue_info*(_queue_, <<commandqueueinfo, _commandqueueinfo_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetCommandQueueInfo.html[clGetCommandQueueInfo].#
+
+

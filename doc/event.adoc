@@ -1,0 +1,56 @@
+
+[[event]]
+=== event
+
+Event objects can be created in two ways: 
+with the <<create_user_event, create_user_event>>(&nbsp;) function (*user events*), or  
+setting the _ge_ parameter to _true_ when issuing a command with a <<commands, enqueue_xxx>>(&nbsp;)
+call (*command events*).
+
+[[create_user_event]]
+* _event_ = *create_user_event*(<<context, _context_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateUserEvent.html[clCreateUserEvent].#
+
+[[set_user_event_status]]
+* *set_user_event_status*(_event_, _status_) +
+[small]#_status_: '_complete_' or negative integer error code. +
+(Note: the default status for _event_ is '_submitted_', and this function can be called 
+on _event_ only once.) +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetUserEventStatus.html[clSetUserEventStatus].#
+
+
+[[retain_event]]
+* *retain_event*(_event_) +
+*release_event*(_event_) +
+*release_events*({_event_}) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainEvent.html[clRetainEvent] - 
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseEvent.html[clReleaseEvent].#
+
+[[get_event_info]]
+* _value_ = *get_event_info*(_event_, <<eventinfo, _eventinfo_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetEventInfo.html[clGetEventInfo].#
+
+[[get_event_profiling_info]]
+* _value_ = *get_event_profiling_info*(_event_, <<profilinginfo, _profilinginfo_>>) +
+[small]#To use this function, the _command_ identified by _event_ must have been enqueued in a 
+command <<queue, _queue_>> created with the '_profiling enabled_' flag set. +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetEventProfilingInfo.html[clGetEventProfilingInfo].#
+
+[[wait_for_events]]
+* *wait_for_events*({_event_}) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clWaitForEvents.html[clWaitForEvents].#
+
+[[set_event_callback]]
+* *set_event_callback*(_event_, _type_) +
+[small]#_type_: '_submitted_', '_running_', or '_complete_'. +
+This function registers a C callback that, when called, just stores the information it receives,
+i.e. the execution status of the command identified by the the event. 
+Use the <<check_event_callback, check_event_callback>>(&nbsp;) function to check if the C callback was called, and to retrieve the command execution status. +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetEventCallback.html[clSetEventCallback].#
+
+[[check_event_callback]]
+* _status_ = *check_event_callback*(_event_, _type_) +
+[small]#Checks if the C callback registered with <<set_event_callback, set_event_callback>>(&nbsp;) was executed. If not, it returns _nil_, otherwise it returns the status that was passed to the callback, which
+may be a <<executionstatus, executionstatus>> value, or an integer code.#
+
+

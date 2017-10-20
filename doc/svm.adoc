@@ -1,0 +1,32 @@
+
+[[svm]]
+=== svm
+
+[[svm_alloc]]
+* _svm_ = *svm_alloc*(<<context, _context_>>, <<memflags, _memflags_>>, _size_, _alignment_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSVMAlloc.html[clSVMAlloc].#
+
+[[svm_free]]
+* *svm_free*(_svm_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSVMFree.html[clSVMFree].#
+
+[[svm_methods]]
+The following methods are also available for the _svm_ object type:
+
+* _size_ = _svm_++:++*size*( )
+
+* _alignment_ = _svm_++:++*alignment*( )
+
+* _ptr_ = _svm_++:++*ptr*( ) +
+[small]#Returns a lightuserdata encapsulating a pointer to the beginning of the SVM.#
+
+* <<memflags, _memflags_>> = _svm_++:++*memflags*( )
+
+////
+
+[[]]
+*  = **( ) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/cl.html[].#
+
+////
+

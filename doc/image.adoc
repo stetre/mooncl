@@ -1,0 +1,33 @@
+
+[[image]]
+=== image
+
+[[get_supported_image_formats]]
+* {<<imageformat, _imageformat_>>} = *get_supported_image_formats*(<<context, _context_>>, <<memflags, _memflags_>>, <<memobjecttype, _memobjecttype_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetSupportedImageFormats.html[clGetSupportedImageFormats].#
+
+[[create_image]]
+* _image_ = *create_image*(<<context, _context_>>, <<memflags, _memflags_>>, _format_, _desc_, [_ptr_]) +
+_image_ = *create_image*(<<context, _context_>>, <<memflags, _memflags_>>, _format_, _desc_ , _data_) +
+[small]#_format_: <<imageformat, _imageformat_>>, +
+_desc_: <<imagedesc, _imagedesc_>>, +
+_ptr_: lightuserdata (_void*_ to valid host memory), +
+_data_: binary string. +
+The _ptr_ and _data_ parameters follow the same rules as for the <<create_buffer, cl.create_buffer>>(&nbsp;) function. +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateImage.html[clCreateImage].#
+
+[[retain_image]]
+* *retain_image*(_image_) +
+*release_image*(_image_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainImage.html[clRetainImage] - 
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseImage.html[clReleaseImage].#
+
+
+[[get_image_info]]
+* _value_ = *get_image_info*(_image_, <<imageinfo, _imageinfo_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetImageInfo.html[clGetImageInfo].#
+
+
+* <<get_mem_object_info, *get_mem_object_info*>>(&nbsp;)
+
+

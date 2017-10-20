@@ -1,0 +1,24 @@
+
+[[platform]]
+=== platform
+
+[[get_platform_ids]]
+* {_platform_} = *get_platform_ids*( ) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPlatformIDs.html[clGetPlatformIDs].#
+
+[[get_platform_info]]
+* _value_ = *get_platform_info*(_platform_, <<platforminfo, _platforminfo_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPlatformInfo.html[clGetPlatformInfo].#
+
+[[is_extension_supported]]
+* _boolean_ = *is_extension_supported*(_platform_, _extensionname_) +
+[small]#Returns _true_ if the given extension is supported by _platform_, _false_ otherwise.#
+
+////
+
+[[]]
+*  = **( ) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/cl.html[].#
+
+////
+

@@ -1,0 +1,115 @@
+
+[[snippets]]
+== Code snippets
+
+[[enums_snippet]]
+.Dealing with enums
+[source,lua,indent=1]
+----
+-- Alternative and equivalent ways to assign values of the 'filtermode' enum type
+-- (whose hint is cl.FILTER_XXX):
+op1 = cl.FILTER_NEAREST 
+op2 = 'nearest' -- XXX=NEAREST
+op3 = cl.FILTER_LINEAR
+op4 = 'linear' -- XXX=LINEAR
+
+print(op1) --> 'nearest'
+print(op2) --> 'nearest'
+print(op3) --> 'linear'
+print(op4) --> 'linear'
+print(op1 == 'nearest') --> true
+print(op3 == op4) --> true
+
+-- List the literals admitted by the 'filtermode' enum type:
+ops = cl.enum('filtermode')
+print(table.concat(ops, ', ')) --> 'nearest', 'linear'
+----
+
+[[flags_snippet]]
+.Dealing with flags
+[source,lua,indent=1]
+----
+-- Two alternative equivalent ways to produce a 'devicetypeflags' value:
+code1 = cl.DEVICE_TYPE_CPU | cl.DEVICE_TYPE_GPU 
+code2 = cl.devicetypeflags('cpu', 'gpu')
+
+assert(code1 == code2) -- true
+print(code1) --> 3
+print(cl.devicetypeflags(code1)) --> cpu gpu
+print(cl.devicetypeflags(code2)) --> cpu gpu
+
+if (code1 & cl.DEVICE_TYPE_GPU) ~= 0 then -- NB: 0 is not false in Lua
+  print("'gpu' bit is set")
+else
+  print("'gpu' bit is not set")
+end
+----
+
+////
+[[clearvalue_snippet]]
+.Examples for clearcolorvalue and clearvalue
+[source, lua, indent=1]
+----
+clearvalue = { color = { 0.2, 0.5, 0.1, 1.0 } }  -- t defaults to 'float32'
+clearvalue = { color = { 0.2, 0.5, 0.1, 1.0, t='float32' } }
+clearvalue = { color = { 20, 112, 200, 1, t='uint32' } }
+clearvalue = { depth = 1.0, stencil = 0 }
+----
+
+
+[[glfwsurface_snippet]]
+.Creating a surface with MoonGLFW 
+[source, lua, indent=1]
+----
+glfw = require("moonglfw")
+cl = require("moonvulkan")
+
+-- 1) Get the list of extensions required by GLFW to create surfaces:
+extension_names = glfw.get_required_instance_extensions()
+print("Required extensions: " .. table.concat(extension_names, ', '))
+
+-- 2) Create a Vulkan instance, enabling the required extensions:
+instance = cl.create_instance({ enabled_extension_names = extension_names })
+
+-- 3.1) Create a window, not tied to any particular API:
+glfw.window_hint('client api', 'no api')
+window = glfw.create_window(640, 480, "My first GLFW/Vulkan window")
+
+-- 3.2) Create a surface for the window:
+surfaceRAW = glfw.create_window_surface(window, instance:raw())
+
+-- 4) Finally, pass the surface to MoonVulkan:
+surface = cl.created_surface(instance, surfaceRAW)
+
+-- Event loop:
+while not glfw.window_should_close(window) do
+   glfw.poll_events()
+end
+
+----
+
+[[versions_snippet]]
+.Handling versions
+[source, lua, indent=1]
+----
+
+print("MoonVulkan version:", cl._VERSION)
+print("Header version (vulkan.h):", cl.HEADER_VERSION)
+print("Supported versions:", table.concat(cl.API_VERSIONS, ","))
+
+for _, s in ipairs(cl.API_VERSIONS) do
+    local ver = cl[s]
+    local major, minor, patch = cl.version_numbers(ver)
+    print(s .. ": " .. ver .. " (" ..  cl.version_string(ver) ..")" ..
+        " major="..major.." minor="..minor.." patch="..patch)
+end
+
+if not cl.API_VERSION_1_0 then print("API_VERSION_1_0 is not supported") end
+if not cl.API_VERSION_2_0 then print("API_VERSION_2_0 is not supported") end
+
+assert(cl.make_version(1, 0, 0) == cl.API_VERSION_1_0) --> true
+
+----
+
+////
+

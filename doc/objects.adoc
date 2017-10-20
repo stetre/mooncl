@@ -1,0 +1,22 @@
+
+[[objects]]
+== Objects
+
+The following tree shows the MoonCL (_OpenCL_) objects and their parent-child relationships.
+
+[small]#<<platform, platform>> _(cl_platform_id)_ +
+{tH}<<device, device>> _(cl_device_id)_ +
+{tI}{tL}sub <<device, device>> _(cl_device_id)_ +
+{tL}<<context, context>> _(cl_context)_ +
+{tS}{tH}<<queue, queue>> _(cl_command_queue)_ +
+{tS}{tH}<<program, program>> _(cl_program)_ +
+{tS}{tI}{tL}<<kernel, kernel>> _(cl_kernel)_ +
+{tS}{tH}<<event, event>> _(cl_event)_ +
+{tS}{tH}<<buffer, buffer>> _(cl_mem)_ +
+{tS}{tI}{tL}sub <<buffer, buffer>> _(cl_mem)_ +
+{tS}{tH}<<image, image>> _(cl_mem)_ +
+{tS}{tH}<<pipe, pipe>> _(cl_mem)_ +
+{tS}{tH}<<sampler, sampler>> _(cl_sampler)_ +
+{tS}{tL}<<svm, svm>> _(void*)_ +
+<<hostmem, hostmem>> (host accessible memory)#
+

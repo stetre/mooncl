@@ -1,0 +1,28 @@
+
+[[buffer]]
+=== buffer
+
+[[create_buffer]]
+* _buffer_ = *create_buffer*(<<context, _context_>>, <<memflags, _memflags_>>, _size_, [_ptr_]) +
+[small]#_ptr_: lightuserdata, +
+If the '_use host ptr_' or the '_copy host ptr_' flags are set, then _ptr_ must contain 
+a valid pointer (_void*_) to at least _size_ bytes of host memory. +
+(Such a pointer can be obtained, for example, using a <<hostmem, hostmem>> object.) +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateBuffer.html[clCreateBuffer].#
+
+[[create_buffer_region]]
+* _buffer_ = *create_buffer_region*(<<buffer, _buffer_>>, <<memflags, _memflags_>>, _origin_, _size_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateSubBuffer.html[clCreateSubBuffer].#
+
+[[retain_buffer]]
+* *retain_buffer*(_buffer_) +
+*release_buffer*(_buffer_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainBuffer.html[clRetainBuffer] - 
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseBuffer.html[clReleaseBuffer].#
+
+[[get_mem_object_info]]
+* _value_ = *get_mem_object_info*(_memobject_, <<meminfo, _meminfo_>>) +
+[small]#_memobject_: <<buffer, buffer>> or  <<image, image>> or  <<pipe, pipe>>. +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetMemObjectInfo.html[clGetMemObjectInfo].#
+
+

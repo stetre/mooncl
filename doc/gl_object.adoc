@@ -1,0 +1,44 @@
+
+[[gl_objects]]
+=== GL objects
+
+[[create_from_gl_buffer]]
+* <<buffer, _buffer_>> = *create_from_gl_buffer*(<<context, _context_>>, <<memflags, _memflags_>>, _glbuffer_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateFromGLBuffer.html[clCreateFromGLBuffer].#
+
+[[create_from_gl_texture]]
+* <<image, _image_>> = *create_from_gl_texture*(<<context, _context_>>, <<memflags, _memflags_>>, <<gltexturetarget, _gltexturetarget_>>, _miplevel_, _texture_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateFromGLTexture.html[clCreateFromGLTexture].#
+
+[[create_from_gl_renderbuffer]]
+* <<image, _image_>> = *create_from_gl_renderbuffer*(<<context, _context_>>, <<memflags, _memflags_>>, _renderbuffer_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateFromGLRenderBuffer.html[clCreateFromGLRenderBuffer].#
+
+[[get_gl_object_info]]
+* <<globjecttype, _globjecttype_>> = *get_gl_object_type*(_globject_) +
+_name_ = *get_gl_object_name*(_globject_) +
+[small]#_globject_ = <<buffer, _buffer_>> | <<image, _image_>>. +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLObjectInfo.html[clGetGLObjectInfo].#
+
+[[get_gl_texture_info]]
+* _value_ = *get_gl_texture_info*(_globject_, <<gltextureinfo, _gltextureinfo_>>) +
+[small]#_globject_ = <<buffer, _buffer_>> | <<image, _image_>>. +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLTextureInfo.html[clGetGLTextureInfo].#
+
+[[get_gl_context_info]]
+* _value_ = *get_gl_context_info*(<<platform, _platform_>>, <<contextproperties, _contextproperties_>>, <<glcontextinfo, _glcontextinfo_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLContextInfoKHR.html[clGetGLContextInfoKHR].#
+
+
+[[create_event_from_gl_sync]]
+* <<event, _event_>> = *create_event_from_gl_sync*(<<context, _context_>>, _glsync_) +
+[small]#_glsync_: lightuserdata (_GLsync*_) +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateEventFromGLsyncKHR.html[clCreateEventFromGLsyncKHR].#
+
+
+////
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPipeInfo.html[clGetPipeInfo].#
+
+* <<get_mem_object_info, *get_mem_object_info*>>(&nbsp;)
+
+////

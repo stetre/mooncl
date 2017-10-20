@@ -1,0 +1,12 @@
+
+[[versions]]
+=== Version handling
+
+The *cl* table contains the following version-related information:
+
+* cl.*_VERSION*: MoonCL version (a string).
+* cl.*CL_VERSION_n_m*: OpenCL versions supported by MoonCL (e.g. cl.CL_VERSION_1_2 = _true_ if OpenCL v1.2 is supported). +
+Note that this indicates only that a particular version is supported by MoonCL, while it may or may not be supported by the available devices (use <<get_device_info, get_device_info>>(&nbsp;) to check it). +
+* cl.*CL_VERSIONS*: a table listing the supported versions as strings (e.g. { 'CL_VERSION_1_0', 'CL_VERSION_2_0', ... }).
+
+

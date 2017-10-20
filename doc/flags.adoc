@@ -1,0 +1,67 @@
+
+[[flags]]
+== Flags
+
+Flags in MoonCL functions and structs are always represented as plain integers,
+and encoded in the same way as the corresponding flags in the C OpenCL API.
+
+The *cl* table contains the CL_XXX values, renamed as *cl.XXX*
+(e.g. cl.DEVICE_TYPE_CPU, cl.DEVICE_TYPE_GPU, etc.).
+
+For each flags type (see the list below), a utility function is also available to map
+an integer code to a list of string literals, each corresponding to an individual bit set 
+in the code, and viceversa to encode an integer value from the individual bits given 
+as a list of string literals. 
+The generic definition of such functions is the following, where *xxxflags* stands for 
+*devicetypeflags*, *memflags*, etc:
+
+[[xxxflags]]
+* _code_ = *xxxflags*(_s1_, _s2_, _..._) +
+_s1_, _s2_, _..._ = *xxxflags*(_code_) +
+[small]#Maps the integer _code_ to/from the list of string values _s1_, _s2_, _..._.#
+
+See also the <<flags_snippet, example>> contained in the code snippets section.
+
+
+
+[[affinitydomainflags]]
+[small]#*affinitydomainflags*: cl.DEVICE_AFFINITY_DOMAIN_XXX (_cl_device_affinity_domain_) +
+Values: '_numa_', '_l4 cache_', '_l3 cache_', '_l2 cache_', '_l1 cache_', '_next partitionable_'.#
+
+[[argtypeflags]]
+[small]#*argtypeflags*: cl.KERNEL_ARG_TYPE_XXX (_cl_kernel_arg_type_qualifier_) +
+Values: '_const_', '_restrict_', '_volatile_', '_pipe_'.#
+
+[[devicetypeflags]]
+[small]#*devicetypeflags*: cl.DEVICE_TYPE_XXX (_cl_device_type_) +
+Values: '_default_', '_cpu_', '_gpu_', '_accelerator_', '_custom_', '_all_'.#
+
+[[execflags]]
+[small]#*execflags*: cl.EXEC_XXX (_cl_device_exec_capabilities_) +
+Values: '_kernel_', '_native kernel_'.#
+
+[[fpflags]]
+[small]#*fpflags*: cl.FP_XXX (_cl_device_fp_config_) +
+Values: '_denorm_', '_inf nan_', '_round to nearest_', '_round to zero_', '_round to inf_', '_fma_', '_float_', '_correctly rounded divide sqrt_'.#
+
+[[mapflags]]
+[small]#*mapflags*: cl.MAP_XXX (_cl_map_flags_) +
+Values: '_read_', '_write_', '_write invalidate region_'.#
+
+[[memflags]]
+[small]#*memflags*: cl.MEM_XXX (_cl_mem_flags_, _cl_svm_mem_flags_) +
+Values: '_read write_', '_write only_', '_read only_', '_use host ptr_', '_alloc host ptr_', '_copy host ptr_', '_host write only_', '_host read only_', '_host no access_', '_fine grain buffer_', '_atomics_', '_kernel read and write_'.#
+
+[[migrateflags]]
+[small]#*migrateflags*: cl.MIGRATE_MEM_OBJECT_XXX (_cl_mem_migration_flags_) +
+Values: '_host_', '_content undefined_'.#
+
+[[queueflags]]
+[small]#*queueflags*: cl.QUEUE_XXX (_cl_command_queue_properties_) +
+Values: '_out of order exec mode enable_', '_profiling enable_', '_on device_', '_on device default_'.#
+
+[[svmflags]]
+[small]#*svmflags*: cl.DEVICE_SVM_XXX (_cl_device_svm_capabilities_) +
+Values: '_coarse grain buffer_', '_fine grain buffer_', '_fine grain system_', '_atomics_'.#
+
+

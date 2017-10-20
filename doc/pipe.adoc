@@ -1,0 +1,21 @@
+
+[[pipe]]
+=== pipe
+
+[[create_pipe]]
+* _pipe_ = *create_pipe*(<<context, _context_>>, <<memflags, _memflags_>>, _packetsize_, _maxpackets_, [<<pipeproperties, _pipeproperties_>>]) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreatePipe.html[clCreatePipe].#
+
+[[retain_pipe]]
+* *retain_pipe*(_pipe_) +
+*release_pipe*(_pipe_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainPipe.html[clRetainPipe] - 
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleasePipe.html[clReleasePipe].#
+
+
+[[get_pipe_info]]
+* _value_ = *get_pipe_info*(_pipe_, <<pipeinfo, _pipeinfo_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPipeInfo.html[clGetPipeInfo].#
+
+* <<get_mem_object_info, *get_mem_object_info*>>(&nbsp;)
+
