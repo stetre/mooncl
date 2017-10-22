@@ -12,7 +12,9 @@
 
 [[is_extension_supported]]
 * _boolean_ = *is_extension_supported*(_platform_, _extensionname_) +
-[small]#Returns _true_ if the given extension is supported by _platform_, _false_ otherwise.#
+[small]#_extensionname_: string (e.g. '_cl_khr_gl_sharing_') +
+Returns _true_ if the given extension is supported by _platform_, _false_ otherwise. +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/EXTENSION.html[EXTENSION].#
 
 ////
 

@@ -1016,7 +1016,9 @@ These are described mainly in the <a href="#miscellanea">'Miscellanea'</a> subse
 <ul>
 <li>
 <p><em>boolean</em> = <strong>is_extension_supported</strong>(<em>platform</em>, <em>extensionname</em>)<br>
-<span class="small">Returns <em>true</em> if the given extension is supported by <em>platform</em>, <em>false</em> otherwise.</span></p>
+<span class="small"><em>extensionname</em>: string (e.g. '<em>cl_khr_gl_sharing</em>')<br>
+Returns <em>true</em> if the given extension is supported by <em>platform</em>, <em>false</em> otherwise.<br>
+Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/EXTENSION.html">EXTENSION</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1528,11 +1530,9 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clG
 <div id="create_image" class="ulist">
 <ul>
 <li>
-<p><em>image</em> = <strong>create_image</strong>(<a href="#context"><em>context</em></a>, <a href="#memflags"><em>memflags</em></a>, <em>format</em>, <em>desc</em>, [<em>ptr</em>])<br>
-<em>image</em> = <strong>create_image</strong>(<a href="#context"><em>context</em></a>, <a href="#memflags"><em>memflags</em></a>, <em>format</em>, <em>desc</em> , <em>data</em>)<br>
-<span class="small"><em>format</em>: <a href="#imageformat"><em>imageformat</em></a>,<br>
-<em>desc</em>: <a href="#imagedesc"><em>imagedesc</em></a>,<br>
-<em>ptr</em>: lightuserdata (<em>void*</em> to valid host memory),<br>
+<p><em>image</em> = <strong>create_image</strong>(<a href="#context"><em>context</em></a>, <a href="#memflags"><em>memflags</em></a>, <a href="#imageformat"><em>imageformat</em></a>, <a href="#imagedesc"><em>imagedesc</em></a>, [<em>ptr</em>])<br>
+<em>image</em> = <strong>create_image</strong>(<a href="#context"><em>context</em></a>, <a href="#memflags"><em>memflags</em></a>, <a href="#imageformat"><em>imageformat</em></a>, <a href="#imagedesc"><em>imagedesc</em></a>, <em>data</em>)<br>
+<span class="small"><em>ptr</em>: lightuserdata (<em>void*</em> to valid host memory),<br>
 <em>data</em>: binary string.<br>
 The <em>ptr</em> and <em>data</em> parameters follow the same rules as for the <a href="#create_buffer">cl.create_buffer</a>(&nbsp;) function.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateImage.html">clCreateImage</a>.</span></p>
