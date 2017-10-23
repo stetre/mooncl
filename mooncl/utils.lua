@@ -53,10 +53,12 @@ function cl.build_program(program, devices, options)
 end
 
 function cl.release_events(events)
-	for _, ev in ipairs(events) do cl.release_event(ev) end
+   for _, ev in ipairs(events) do cl.release_event(ev) end
 end
 
-function cl.is_extension_supported(platform, name)
-	local extensions = cl.get_platform_info(platform, "extensions")
-	return string.find(extensions, name) and true or false
+function cl.is_extension_supported(where, name)
+   local extensions = cl.type(where) == "device"
+      and cl.get_device_info(where, "extensions")
+      or cl.get_platform_info(where, "extensions")
+   return string.find(extensions, name) and true or false
 end
