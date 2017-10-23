@@ -1174,33 +1174,6 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clC
 </li>
 </ul>
 </div>
-<div id="create_program_with_binary" class="ulist">
-<ul>
-<li>
-<p><em>program</em>, {errmsg} = <strong>create_program_with_binary</strong>(<a href="#context"><em>context</em></a>, {<a href="#device"><em>device</em></a>}, {binary})<br>
-<span class="small">Returns <em>nil</em> followed by a list of error messages (one per device/binary) if an invalid binary is encountered for any device.<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithBinary.html">clCreateProgramWithBinary</a>.</span></p>
-</li>
-</ul>
-</div>
-<div id="create_program_with_built_in_kernels" class="ulist">
-<ul>
-<li>
-<p><em>program</em> = <strong>create_program_with_built_in_kernels</strong>(<a href="#context"><em>context</em></a>, {<a href="#device"><em>device</em></a>}, {<em>kernel_name</em>})<br>
-<span class="small"><em>kernel_name</em>: string.<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithBuiltInKernels.html">clCreateProgramWithBuiltInKernels</a>.</span></p>
-</li>
-</ul>
-</div>
-<div id="create_program_with_il" class="ulist">
-<ul>
-<li>
-<p><em>program</em> = <strong>create_program_with_il</strong>(<a href="#context"><em>context</em></a>, <em>il</em>)<br>
-<span class="small"><em>il</em>: binary string.<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithIL.html">clCreateProgramWithIL</a>.</span></p>
-</li>
-</ul>
-</div>
 <div id="retain_program" class="ulist">
 <ul>
 <li>
@@ -1223,6 +1196,59 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clB
 </li>
 </ul>
 </div>
+<div id="unload_platform_compiler" class="ulist">
+<ul>
+<li>
+<p><strong>unload_platform_compiler</strong>(<a href="#platform"><em>platform</em></a>)<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clUnloadPlatformCompiler.html">clUnloadPlatformCompiler</a>.</span></p>
+</li>
+</ul>
+</div>
+<div id="get_program_info" class="ulist">
+<ul>
+<li>
+<p><em>value</em> = <strong>get_program_info</strong>(<em>program</em>, <a href="#programinfo"><em>programinfo</em></a>)<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetProgramInfo.html">clGetProgramInfo</a>.</span></p>
+</li>
+</ul>
+</div>
+<div id="get_program_build_info" class="ulist">
+<ul>
+<li>
+<p><em>value</em> = <strong>get_program_build_info</strong>(<em>program</em>, <a href="#device"><em>device</em></a>, <a href="#programbuildinfo"><em>programbuildinfo</em></a>)<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetProgramBuildInfo.html">clGetProgramBuildInfo</a>.</span></p>
+</li>
+</ul>
+</div>
+<hr>
+<div id="create_program_with_binary" class="ulist">
+<ul>
+<li>
+<p><em>program</em>, {errmsg} = <strong>create_program_with_binary</strong>(<a href="#context"><em>context</em></a>, {<a href="#device"><em>device</em></a>}, {binary})<br>
+<span class="small">Returns <em>nil</em> followed by a list of error messages (one per device/binary) if an invalid binary is encountered for any device.<br>
+Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithBinary.html">clCreateProgramWithBinary</a>.</span></p>
+</li>
+</ul>
+</div>
+<div id="create_program_with_built_in_kernels" class="ulist">
+<ul>
+<li>
+<p><em>program</em> = <strong>create_program_with_built_in_kernels</strong>(<a href="#context"><em>context</em></a>, {<a href="#device"><em>device</em></a>}, {<em>kernelname</em>})<br>
+<span class="small"><em>kernelname</em>: string.<br>
+Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithBuiltInKernels.html">clCreateProgramWithBuiltInKernels</a>.</span></p>
+</li>
+</ul>
+</div>
+<div id="create_program_with_il" class="ulist">
+<ul>
+<li>
+<p><em>program</em> = <strong>create_program_with_il</strong>(<a href="#context"><em>context</em></a>, <em>il</em>)<br>
+<span class="small"><em>il</em>: binary string.<br>
+Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithIL.html">clCreateProgramWithIL</a>.</span></p>
+</li>
+</ul>
+</div>
+<hr>
 <div id="build_program_" class="ulist">
 <ul>
 <li>
@@ -1256,30 +1282,6 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clC
 If the underlying call to <em>clLinkProgram(&nbsp;)</em> fails, this function returns <em>nil</em> followed by
 an error message.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clLinkProgram.html">clLinkProgram</a>.</span></p>
-</li>
-</ul>
-</div>
-<div id="unload_platform_compiler" class="ulist">
-<ul>
-<li>
-<p><strong>unload_platform_compiler</strong>(<a href="#platform"><em>platform</em></a>)<br>
-<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clUnloadPlatformCompiler.html">clUnloadPlatformCompiler</a>.</span></p>
-</li>
-</ul>
-</div>
-<div id="get_program_info" class="ulist">
-<ul>
-<li>
-<p><em>value</em> = <strong>get_program_info</strong>(<em>program</em>, <a href="#programinfo"><em>programinfo</em></a>)<br>
-<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetProgramInfo.html">clGetProgramInfo</a>.</span></p>
-</li>
-</ul>
-</div>
-<div id="get_program_build_info" class="ulist">
-<ul>
-<li>
-<p><em>value</em> = <strong>get_program_build_info</strong>(<em>program</em>, <a href="#device"><em>device</em></a>, <a href="#programbuildinfo"><em>programbuildinfo</em></a>)<br>
-<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetProgramBuildInfo.html">clGetProgramBuildInfo</a>.</span></p>
 </li>
 </ul>
 </div>
