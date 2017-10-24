@@ -147,6 +147,8 @@ typedef cl_int (*PFN_clEnqueueTask)(cl_command_queue, cl_kernel, cl_uint, const 
 typedef cl_event (*clCreateEventFromGLsyncKHR_fn)(cl_context, cl_GLsync, cl_int*); //VERSION_1_1
 typedef cl_mem (*clCreateFromGLBuffer_fn)(cl_context, cl_mem_flags, cl_GLuint, int*); //VERSION_1_0
 typedef cl_mem (*clCreateFromGLTexture_fn)(cl_context, cl_mem_flags, cl_GLenum, cl_GLint, cl_GLuint, cl_int*); //VERSION_1_2
+typedef cl_mem (*clCreateFromGLTexture2D_fn)(cl_context, cl_mem_flags, cl_GLenum, cl_GLint, cl_GLuint, cl_int*); // VERSION_1_1_DEPRECATED;
+typedef cl_mem (*clCreateFromGLTexture3D_fn)(cl_context, cl_mem_flags, cl_GLenum, cl_GLint, cl_GLuint, cl_int*); // VERSION_1_1_DEPRECATED;
 typedef cl_mem (*clCreateFromGLRenderbuffer_fn)(cl_context, cl_mem_flags, cl_GLuint, cl_int*); //VERSION_1_0
 typedef cl_int (*clGetGLObjectInfo_fn)(cl_mem, cl_gl_object_type*, cl_GLuint*); //VERSION_1_0
 typedef cl_int (*clGetGLTextureInfo_fn)(cl_mem, cl_gl_texture_info, size_t, void*, size_t*); //VERSION_1_0
@@ -155,6 +157,4 @@ typedef cl_int (*clEnqueueReleaseGLObjects_fn)(cl_command_queue, cl_uint, const 
 //typedef cl_int (*clGetGLContextInfoKHR_fn)(const cl_context_properties*, cl_gl_context_info, size_t, void*, size_t*); //VERSION_1_0
 //typedef cl_int (*clGetKernelSubGroupInfoKHR_fn)(cl_kernel, cl_device_id, cl_kernel_sub_group_info, size_t , const void*, size_t, void*, size_t*); // VERSION_2_0_DEPRECATED
  
-
-
 #endif /* pfnDEFINED */

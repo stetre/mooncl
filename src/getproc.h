@@ -173,6 +173,8 @@ typedef struct {
     clCreateEventFromGLsyncKHR_fn CreateEventFromGLsyncKHR;
     clCreateFromGLBuffer_fn CreateFromGLBuffer;
     clCreateFromGLTexture_fn CreateFromGLTexture;
+    clCreateFromGLTexture2D_fn CreateFromGLTexture2D;
+    clCreateFromGLTexture3D_fn CreateFromGLTexture3D;
     clCreateFromGLRenderbuffer_fn CreateFromGLRenderbuffer;
     clGetGLObjectInfo_fn GetGLObjectInfo;
     clGetGLTextureInfo_fn GetGLTextureInfo;

@@ -98,6 +98,24 @@ void enums_freelist(lua_State *L, uint32_t *list);
 #define NONCL_TYPE_FLOAT        10
 #define NONCL_TYPE_DOUBLE       11
 
+/* DOMAIN_GL_TEXTURE_TARGET (from gl.h) */
+#define GL_TEXTURE_1D 0x0DE0
+#define GL_TEXTURE_2D 0x0DE1
+#define GL_TEXTURE_3D 0x806F
+#define GL_TEXTURE_1D_ARRAY 0x8C18
+#define GL_TEXTURE_2D_ARRAY 0x8C1A
+#define GL_TEXTURE_BUFFER 0x8C2A
+#define GL_TEXTURE_CUBE_MAP 0x8513
+#define GL_TEXTURE_CUBE_MAP_POSITIVE_X 0x8515
+#define GL_TEXTURE_CUBE_MAP_NEGATIVE_X 0x8516
+#define GL_TEXTURE_CUBE_MAP_POSITIVE_Y 0x8517
+#define GL_TEXTURE_CUBE_MAP_NEGATIVE_Y 0x8518
+#define GL_TEXTURE_CUBE_MAP_POSITIVE_Z 0x8519
+#define GL_TEXTURE_CUBE_MAP_NEGATIVE_Z 0x851A
+#define GL_TEXTURE_RECTANGLE 0x84F5
+#define GL_TEXTURE_2D_MULTISAMPLE 0x9100
+#define GL_TEXTURE_2D_MULTISAMPLE_ARRAY 0x9102
+
 #define testprimtype(L, arg, err) enums_test((L), DOMAIN_NONCL_TYPE, (arg), (err))
 #define checkprimtype(L, arg) enums_check((L), DOMAIN_NONCL_TYPE, (arg))
 #define pushprimtype(L, val) enums_push((L), DOMAIN_NONCL_TYPE, (uint32_t)(val))

@@ -100,8 +100,31 @@ static int CreateFromGLTexture(lua_State *L)
     cl_GLenum target = checkgltexturetarget(L, 3);
     cl_GLint miplevel = luaL_checkinteger(L, 4);
     cl_GLuint texture = luaL_checkinteger(L, 5);
-    CheckExtPfn(L, context_ud, CreateFromGLTexture);
-    image = context_ud->clext->CreateFromGLTexture(context, flags, target, miplevel, texture, &ec);
+    if(context_ud->clext->CreateFromGLTexture)
+        {
+        image = context_ud->clext->CreateFromGLTexture(context, flags, target, miplevel, texture, &ec);
+        }
+    else /* fall back to deprecated older functions (pre version 1.2) */
+        {
+        if(target == GL_TEXTURE_1D)
+            {
+            /* Not supported by older functions: raise an error */
+            CheckExtPfn(L, context_ud, CreateFromGLTexture);
+            return 0;
+            }
+        if(target == GL_TEXTURE_3D)
+            {
+            CheckExtPfn(L, context_ud, CreateFromGLTexture3D);
+            image = context_ud->clext->CreateFromGLTexture3D
+                        (context, flags, target, miplevel, texture, &ec);
+            }
+        else /* any other target */
+            {
+            CheckExtPfn(L, context_ud, CreateFromGLTexture2D);
+            image = context_ud->clext->CreateFromGLTexture2D
+                        (context, flags, target, miplevel, texture, &ec);
+            }
+        }
     CheckError(L, ec);
     ud = newimage(L, context, image);
     MarkGLTexture(ud);

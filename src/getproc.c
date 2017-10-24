@@ -228,6 +228,8 @@ mooncl_extdt_t *mooncl_getproc_extensions(lua_State *L, cl_platform platform)
     OPT(CreateEventFromGLsyncKHR);
     OPT(CreateFromGLBuffer);
     OPT(CreateFromGLTexture);
+    OPT(CreateFromGLTexture2D);
+    OPT(CreateFromGLTexture3D);
     OPT(CreateFromGLRenderbuffer);
     OPT(GetGLObjectInfo);
     OPT(GetGLTextureInfo);
