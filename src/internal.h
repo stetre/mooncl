@@ -153,10 +153,11 @@ int pushdata(lua_State *L, int type, void *src, size_t srcsize);
 #define ERR_TABLE           -4
 #define ERR_EMPTY           -5
 #define ERR_MEMORY          -6
-#define ERR_LENGTH          -7
-#define ERR_POOL            -8
-#define ERR_BOUNDARIES      -9
-#define ERR_UNKNOWN         -10
+#define ERR_MALLOC_ZERO     -7
+#define ERR_LENGTH          -8
+#define ERR_POOL            -9
+#define ERR_BOUNDARIES      -10
+#define ERR_UNKNOWN         -11
 #define errstring mooncl_errstring
 const char* errstring(int err);
 

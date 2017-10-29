@@ -72,7 +72,10 @@ static void Free_(void *ptr)
 
 void *Malloc(lua_State *L, size_t size)
     {
-    void *ptr = Malloc_(size);
+    void *ptr;
+    if(size == 0)
+        { luaL_error(L, errstring(ERR_MALLOC_ZERO)); return NULL; }
+    ptr = Malloc_(size);
     if(ptr==NULL)
         { luaL_error(L, errstring(ERR_MEMORY)); return NULL; }
     memset(ptr, 0, size);
@@ -303,6 +306,7 @@ const char* errstring(int err)
         case ERR_VALUE: return "invalid value";
         case ERR_NOTPRESENT: return "missing";
         case ERR_MEMORY: return "out of memory";
+        case ERR_MALLOC_ZERO: return "zero bytes malloc";
         case ERR_LENGTH: return "invalid length";
         case ERR_POOL: return "elements are not from the same pool";
         case ERR_BOUNDARIES: return "invalid boundaries";
