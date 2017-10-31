@@ -52,6 +52,22 @@ function cl.build_program(program, devices, options)
    error(table.concat(t, '\n'), 2)
 end
 
+function cl.make_program_with_source(context, source, devices, options)
+   local ok, program = pcall(cl.create_program_with_source, context, source)
+   if not ok then error(program, 2) end
+   local ok, errmsg = pcall(cl.build_program(program, devices, options))
+   if not ok then error(errmsg, 2) end
+   return program
+end
+
+function cl.make_program_with_sourcefile(context, filename, devices, options)
+   local ok, program = pcall(cl.create_program_with_sourcefile, context, source)
+   if not ok then error(program, 2) end
+   local ok, errmsg = pcall(cl.build_program(program, devices, options))
+   if not ok then error(errmsg, 2) end
+   return program
+end
+
 function cl.release_events(events)
    for _, ev in ipairs(events) do cl.release_event(ev) end
 end

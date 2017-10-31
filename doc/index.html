@@ -1166,21 +1166,11 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clC
 <div id="create_program_with_source" class="ulist">
 <ul>
 <li>
-<p><em>program</em>= <strong>create_program_with_source</strong>(<a href="#context"><em>context</em></a>, <em>source</em>)<br>
-<em>program</em>= <strong>create_program_with_sourcefile</strong>(<a href="#context"><em>context</em></a>, <em>filename</em>)<br>
+<p><em>program</em> = <strong>create_program_with_source</strong>(<a href="#context"><em>context</em></a>, <em>source</em>)<br>
+<em>program</em> = <strong>create_program_with_sourcefile</strong>(<a href="#context"><em>context</em></a>, <em>filename</em>)<br>
 <span class="small"><em>source</em>: string containing the program source code,<br>
 <em>filename</em>: name of a file containing the program source code.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithSource.html">clCreateProgramWithSource</a>.</span></p>
-</li>
-</ul>
-</div>
-<div id="retain_program" class="ulist">
-<ul>
-<li>
-<p><strong>retain_program</strong>(<em>program</em>)<br>
-<strong>release_program</strong>(<em>program</em>)<br>
-<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainProgram.html">clRetainProgram</a> -
-<a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseProgram.html">clReleaseProgram</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1193,6 +1183,27 @@ Raises an error if the underlying call to <em>clBuildProgram(&nbsp;)</em> fails.
 If the error is a '<em>build program failure</em>', also collects and prints the logs from all the devices
 in the given list.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clBuildProgram.html">clBuildProgram</a>.</span></p>
+</li>
+</ul>
+</div>
+<div id="make_program_with_source" class="ulist">
+<ul>
+<li>
+<p><em>program</em> = <strong>make_program_with_source</strong>(<a href="#context"><em>context</em></a>, <em>source</em>, [{<a href="#device"><em>device</em></a>}], [<em>options</em>])<br>
+<em>program</em> = <strong>make_program_with_sourcefile</strong>(<a href="#context"><em>context</em></a>, <em>filename</em>, [{<a href="#device"><em>device</em></a>}], [<em>options</em>])<br>
+<span class="small">Combined create and build program.<br>
+Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithSource.html">clCreateProgramWithSource</a> -
+<a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clBuildProgram.html">clBuildProgram</a>.</span></p>
+</li>
+</ul>
+</div>
+<div id="retain_program" class="ulist">
+<ul>
+<li>
+<p><strong>retain_program</strong>(<em>program</em>)<br>
+<strong>release_program</strong>(<em>program</em>)<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainProgram.html">clRetainProgram</a> -
+<a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseProgram.html">clReleaseProgram</a>.</span></p>
 </li>
 </ul>
 </div>

@@ -3,17 +3,11 @@
 === program
 
 [[create_program_with_source]]
-*  _program_= *create_program_with_source*(<<context, _context_>>, _source_) +
-_program_= *create_program_with_sourcefile*(<<context, _context_>>, _filename_) +
+*  _program_ = *create_program_with_source*(<<context, _context_>>, _source_) +
+_program_ = *create_program_with_sourcefile*(<<context, _context_>>, _filename_) +
 [small]#_source_: string containing the program source code, +
 _filename_: name of a file containing the program source code. +
 Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithSource.html[clCreateProgramWithSource].#
-
-[[retain_program]]
-* *retain_program*(_program_) +
-*release_program*(_program_) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainProgram.html[clRetainProgram] - 
-https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseProgram.html[clReleaseProgram].#
 
 [[build_program]]
 * *build_program*(_program_, [{<<device, _device_>>}], [_options_]) +
@@ -22,6 +16,19 @@ Raises an error if the underlying call to _clBuildProgram(&nbsp;)_ fails. +
 If the error is a '_build program failure_', also collects and prints the logs from all the devices
 in the given list. +
 Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clBuildProgram.html[clBuildProgram].#
+
+[[make_program_with_source]]
+*  _program_ = *make_program_with_source*(<<context, _context_>>, _source_, [{<<device, _device_>>}], [_options_]) +
+_program_ = *make_program_with_sourcefile*(<<context, _context_>>, _filename_, [{<<device, _device_>>}], [_options_]) +
+[small]#Combined create and build program. +
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithSource.html[clCreateProgramWithSource] -
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clBuildProgram.html[clBuildProgram].#
+
+[[retain_program]]
+* *retain_program*(_program_) +
+*release_program*(_program_) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainProgram.html[clRetainProgram] -
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseProgram.html[clReleaseProgram].#
 
 [[unload_platform_compiler]]
 * *unload_platform_compiler*(<<platform, _platform_>>) +
