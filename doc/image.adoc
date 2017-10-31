@@ -2,10 +2,6 @@
 [[image]]
 === image
 
-[[get_supported_image_formats]]
-* {<<imageformat, _imageformat_>>} = *get_supported_image_formats*(<<context, _context_>>, <<memflags, _memflags_>>, <<memobjecttype, _memobjecttype_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetSupportedImageFormats.html[clGetSupportedImageFormats].#
-
 [[create_image]]
 * _image_ = *create_image*(<<context, _context_>>, <<memflags, _memflags_>>, <<imageformat, _imageformat_>>, <<imagedesc, _imagedesc_>>, [_ptr_]) +
 _image_ = *create_image*(<<context, _context_>>, <<memflags, _memflags_>>, <<imageformat, _imageformat_>>, <<imagedesc, _imagedesc_>>, _data_) +
@@ -20,6 +16,9 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateImag
 [small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainImage.html[clRetainImage] - 
 https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseImage.html[clReleaseImage].#
 
+[[get_supported_image_formats]]
+* {<<imageformat, _imageformat_>>} = *get_supported_image_formats*(<<context, _context_>>, <<memflags, _memflags_>>, <<memobjecttype, _memobjecttype_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetSupportedImageFormats.html[clGetSupportedImageFormats].#
 
 [[get_image_info]]
 * _value_ = *get_image_info*(_image_, <<imageinfo, _imageinfo_>>) +
