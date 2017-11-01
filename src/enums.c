@@ -709,11 +709,11 @@ void mooncl_open_enums(lua_State *L)
     ADD(BUFFER_CREATE_TYPE_REGION, "region");
 
     domain = DOMAIN_PROFILING_INFO; /* cl_profiling_info  */
-    ADD(PROFILING_COMMAND_QUEUED, "queued");
-    ADD(PROFILING_COMMAND_SUBMIT, "submit");
-    ADD(PROFILING_COMMAND_START, "start");
-    ADD(PROFILING_COMMAND_END, "end");
-    ADD(PROFILING_COMMAND_COMPLETE, "complete");
+    ADD(PROFILING_COMMAND_QUEUED, "command queued");
+    ADD(PROFILING_COMMAND_SUBMIT, "command submit");
+    ADD(PROFILING_COMMAND_START, "command start");
+    ADD(PROFILING_COMMAND_END, "command end");
+    ADD(PROFILING_COMMAND_COMPLETE, "command complete");
 
     domain = DOMAIN_BUILD_STATUS; /* cl_build_status (cl_int) */
     ADD(BUILD_SUCCESS, "success");

@@ -320,8 +320,8 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPlatfor
 Values: '_char_', '_uchar_', '_short_', '_ushort_', '_int_', '_uint_', '_long_', '_ulong_', '_half_', '_float_', '_double_'.#
 
 [[profilinginfo]]
-[small]#*profilinginfo*: cl.PROFILING_COMMAND_XXX  (_cl_profiling_info_) +
-'_queued_', '_submit_', '_start_', '_end_', '_complete_': integer (denoting time in nanoseconds) +
+[small]#*profilinginfo*: cl.PROFILING_XXX  (_cl_profiling_info_) +
+'_command queued_', '_command submit_', '_command start_', '_command end_', '_command complete_': integer (denoting time in nanoseconds) +
 Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetEventProfilingInfo.html[clGetEventProfilingInfo].#
 
 [[programbinarytype]]
