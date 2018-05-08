@@ -1101,7 +1101,8 @@ The second return value is a string indicating the endianness of the device ('<e
 <p><em>context</em> = <strong>create_context</strong>(<a href="#platform"><em>platform</em></a>, [{<a href="#device"><em>device</em></a>}], [<a href="#contextproperties"><em>contextproperties</em></a>])<br>
 <em>context</em> = <strong>create_context</strong>(<a href="#platform"><em>platform</em></a>,  <a href="#devicetypeflags"><em>devicetypeflags</em></a>, [<a href="#contextproperties"><em>contextproperties</em></a>])<br>
 <span class="small">Note: the '<em>platform</em>' field in <a href="#contextproperties"><em>contextproperties</em></a> is ignored by this function (the platform must be passed as standalone parameter).<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateContext.html">clCreateContext</a>.</span></p>
+Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateContext.html">clCreateContext</a> -
+<a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateContextFromType.html">clCreateContextFromType</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1635,19 +1636,17 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clC
 <div id="get_gl_object_info" class="ulist">
 <ul>
 <li>
-<p><a href="#globjecttype"><em>globjecttype</em></a> = <strong>get_gl_object_type</strong>(<em>globject</em>)<br>
-<em>name</em> = <strong>get_gl_object_name</strong>(<em>globject</em>)<br>
-<span class="small"><em>globject</em> = <a href="#buffer"><em>buffer</em></a> | <a href="#image"><em>image</em></a>.<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLObjectInfo.html">clGetGLObjectInfo</a>.</span></p>
+<p><a href="#globjecttype"><em>globjecttype</em></a> = <strong>get_gl_object_type</strong>(<a href="#buffer"><em>buffer</em></a>|<a href="#image"><em>image</em></a>)<br>
+<em>name</em> = <strong>get_gl_object_name</strong>(<a href="#buffer"><em>buffer</em></a>|<a href="#image"><em>image</em></a>)<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLObjectInfo.html">clGetGLObjectInfo</a>.</span></p>
 </li>
 </ul>
 </div>
 <div id="get_gl_texture_info" class="ulist">
 <ul>
 <li>
-<p><em>value</em> = <strong>get_gl_texture_info</strong>(<em>globject</em>, <a href="#gltextureinfo"><em>gltextureinfo</em></a>)<br>
-<span class="small"><em>globject</em> = <a href="#buffer"><em>buffer</em></a> | <a href="#image"><em>image</em></a>.<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLTextureInfo.html">clGetGLTextureInfo</a>.</span></p>
+<p><em>value</em> = <strong>get_gl_texture_info</strong>(<a href="#buffer"><em>buffer</em></a>|<a href="#image"><em>image</em></a>, <a href="#gltextureinfo"><em>gltextureinfo</em></a>)<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLTextureInfo.html">clGetGLTextureInfo</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1897,27 +1896,27 @@ for execution on devices.</p>
 <div class="paragraph">
 <p>Unless otherwise specified, the following facts apply to any enqueue_xxx(&nbsp;) function described in this section:</p>
 </div>
-<div class="ulist unstyled">
+<div id="enqueue_params" class="ulist unstyled">
 <ul class="unstyled">
 <li>
-<p>- the <em>blocking</em> parameter is a boolean indicating if the call must block or not until the
+<p>- the <strong><em>blocking</em></strong> parameter is a boolean indicating if the call must block or not until the
 command has been executed;</p>
 </li>
 <li>
-<p>- the {<em>we</em>} parameter ('wait events') is an optional list of <a href="#event"><em>events</em></a> on which to wait
+<p>- the <strong>{<em>we</em>}</strong> parameter ('wait events') is an optional list of <a href="#event"><em>events</em></a> on which to wait
 for before command execution;</p>
 </li>
 <li>
-<p>- the <em>ge</em> parameter ('generate event') is an optional boolean that defaults to <em>false</em>;
+<p>- the <strong><em>ge</em></strong> parameter ('generate event') is an optional boolean that defaults to <em>false</em>;
 if <em>ge</em> is given a <em>true</em> value, then the function generates and returns an <a href="#event"><em>event</em></a>
 that identifies the enqueued command; otherwise the <em>event</em> return value is <em>nil</em>;</p>
 </li>
 <li>
-<p>- the {integer3} type denotes an array of up to 3 integers
+<p>- the <strong><em>{integer}[3]</em></strong> notation denotes an array of up to 3 integers
 (missing entries default to 0, e.g. <em>{5}</em> is equivalent to <em>{5, 0, 0}</em>);</p>
 </li>
 <li>
-<p>- the <em>ptr</em> parameter or return value is a
+<p>- the <strong><em>ptr</em></strong> parameter or return value is a
 <a href="http://www.lua.org/manual/5.3/manual.html#lua_pushlightuserdata">lightuserdata</a> encapsulating
 a valid pointer (<em>void*</em>) to memory;</p>
 </li>
@@ -1932,7 +1931,7 @@ corresponding parameters of the underlying <em>clEnqueueXxxx(&nbsp;)</em> functi
 <div id="enqueue_read_buffer" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_read_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <em>blocking</em>, <em>offset</em>, <em>size</em>, <em>ptr</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_read_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <em>offset</em>, <em>size</em>, <a href="#enqueue_params"><em>ptr</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueReadBuffer.html">clEnqueueReadBuffer</a>.</span></p>
 </li>
 </ul>
@@ -1940,7 +1939,7 @@ corresponding parameters of the underlying <em>clEnqueueXxxx(&nbsp;)</em> functi
 <div id="enqueue_write_buffer" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_write_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <em>blocking</em>, <em>offset</em>, <em>size</em>, <em>ptr</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_write_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <em>offset</em>, <em>size</em>, <a href="#enqueue_params"><em>ptr</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueWriteBuffer.html">clEnqueueWriteBuffer</a>.</span></p>
 </li>
 </ul>
@@ -1948,7 +1947,7 @@ corresponding parameters of the underlying <em>clEnqueueXxxx(&nbsp;)</em> functi
 <div id="enqueue_copy_buffer" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_copy_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>srcbuffer</em></a>, <a href="#buffer"><em>dstbuffer</em></a>, <em>srcoffset</em>, <em>dstoffset</em>, <em>size</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_copy_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>srcbuffer</em></a>, <a href="#buffer"><em>dstbuffer</em></a>, <em>srcoffset</em>, <em>dstoffset</em>, <em>size</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyBuffer.html">clEnqueueCopyBuffer</a>.</span></p>
 </li>
 </ul>
@@ -1956,7 +1955,7 @@ corresponding parameters of the underlying <em>clEnqueueXxxx(&nbsp;)</em> functi
 <div id="enqueue_fill_buffer" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_fill_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <em>pattern</em>, <em>offset</em>, <em>size</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_fill_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <em>pattern</em>, <em>offset</em>, <em>size</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small"><em>pattern</em>: binary string<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueFillBuffer.html">clEnqueueFillBuffer</a>.</span></p>
 </li>
@@ -1966,11 +1965,11 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_read_buffer_rect" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_read_buffer_rect</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <em>blocking</em>, <em>&#8230;&#8203;</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small">arg4-6: <em>buffer_origin</em>, <em>host_origin</em>, <em>region</em> : {integer3},<br>
+<p><em>event</em> = <strong>enqueue_read_buffer_rect</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <em>&#8230;&#8203;</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small">arg4-6: <em>buffer_origin</em>, <em>host_origin</em>, <em>region</em> : <a href="#enqueue_params">{integer}[3]</a>,<br>
 arg7-8: <em>bufferrowpitch</em>, <em>bufferslicepitch</em>: integer,<br>
 arg9-10: <em>hostrowpitch</em>, <em>hostslicepitch</em>: integer,<br>
-arg11: <em>ptr</em>: lightuserdata.<br>
+arg11: <a href="#enqueue_params"><em>ptr</em></a>: lightuserdata.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueReadBufferRect.html">clEnqueueReadBufferRect</a>.</span></p>
 </li>
 </ul>
@@ -1978,11 +1977,11 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_write_buffer_rect" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_write_buffer_rect</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <em>blocking</em>, <em>&#8230;&#8203;</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small">arg4-6: <em>bufferorigin</em>, <em>hostorigin</em>, <em>region</em>: {integer3},<br>
+<p><em>event</em> = <strong>enqueue_write_buffer_rect</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <em>&#8230;&#8203;</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small">arg4-6: <em>bufferorigin</em>, <em>hostorigin</em>, <em>region</em>: <a href="#enqueue_params">{integer}[3]</a>,<br>
 arg7-8: <em>bufferrowpitch</em>, <em>bufferslicepitch</em>: integer,<br>
 arg9-10: <em>hostrowpitch</em>, <em>hostslicepitch</em>: integer,<br>
-arg11: <em>ptr</em>: lightuserdata.<br>
+arg11: <a href="#enqueue_params"><em>ptr</em></a>: lightuserdata.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueWriteBufferRect.html">clEnqueueWriteBufferRect</a>.</span></p>
 </li>
 </ul>
@@ -1990,8 +1989,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_copy_buffer_rect" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_copy_buffer_rect</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>srcbuffer</em></a>, <a href="#buffer"><em>dstbuffer</em></a>, <em>&#8230;&#8203;</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small">arg4-6: <em>srcorigin</em>, <em>dstorigin</em>, <em>region</em> : {integer3},<br>
+<p><em>event</em> = <strong>enqueue_copy_buffer_rect</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>srcbuffer</em></a>, <a href="#buffer"><em>dstbuffer</em></a>, <em>&#8230;&#8203;</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small">arg4-6: <em>srcorigin</em>, <em>dstorigin</em>, <em>region</em> : <a href="#enqueue_params">{integer}[3]</a>,<br>
 arg7-8: <em>srcrowpitch</em>, <em>srcslicepitch</em>: integer.<br>
 arg9-10: <em>dstrowpitch</em>, <em>dstslicepitch</em>: integer.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyBufferRect.html">clEnqueueCopyBufferRect</a>.</span></p>
@@ -2002,9 +2001,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_map_buffer" class="ulist">
 <ul>
 <li>
-<p><em>ptr</em>, <em>event</em> = <strong>enqueue_map_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <em>blocking</em>, <a href="#mapflags"><em>mapflags</em></a>, <em>offset</em>, <em>size</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><a href="#enqueue_params"><em>ptr</em></a>, <em>event</em> = <strong>enqueue_map_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <a href="#mapflags"><em>mapflags</em></a>, <em>offset</em>, <em>size</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small"><em>offset</em>, <em>size</em>: integer,<br>
-<em>ptr</em>: lightuserdata.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMapBuffer.html">clEnqueueMapBuffer</a>.</span></p>
 </li>
 </ul>
@@ -2012,8 +2010,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_unmap_buffer" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>event_unmap_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <em>ptr</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small">The <em>ptr</em> lightuserdata must contain a pointer returned by <em>cl.enqueue_map_buffer(&nbsp;)</em>.<br>
+<p><em>event</em> = <strong>enqueue_unmap_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>buffer</em></a>, <a href="#enqueue_params"><em>ptr</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small">The <a href="#enqueue_params"><em>ptr</em></a> lightuserdata must contain a pointer returned by <em>cl.enqueue_map_buffer(&nbsp;)</em>.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueUnmapMemObject.html">clEnqueueUnmapMemObject</a>.</span></p>
 </li>
 </ul>
@@ -2022,8 +2020,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_migrate_mem_objects" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_migrate_mem_objects</strong>(<a href="#queue"><em>queue</em></a>, <a href="#migrateflags"><em>migrateflags</em></a>, {<em>memobject</em>}, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small"><em>memobject</em>: <a href="#buffer">buffer</a> or  <a href="#image">image</a> or  <a href="#pipe">pipe</a>.<br>
+<p><em>event</em> = <strong>enqueue_migrate_mem_objects</strong>(<a href="#queue"><em>queue</em></a>, <a href="#migrateflags"><em>migrateflags</em></a>, {<em>memobject</em>}, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small"><em>memobject</em>: <a href="#buffer">buffer</a>|<a href="#image">image</a>|<a href="#pipe">pipe</a>.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMigrateMemObjects.html">clEnqueueMigrateMemObjects</a>.</span></p>
 </li>
 </ul>
@@ -2034,10 +2032,10 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_read_image" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_read_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <em>blocking</em>, <em>origin</em>, <em>region</em>, <em>rowpitch</em>, <em>slicepitch</em>, <em>ptr</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small"><em>origin</em>, <em>region</em>: {integer3},<br>
+<p><em>event</em> = <strong>enqueue_read_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <em>origin</em>, <em>region</em>, <em>rowpitch</em>, <em>slicepitch</em>, <a href="#enqueue_params"><em>ptr</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small"><em>origin</em>, <em>region</em>: <a href="#enqueue_params">{integer}[3]</a>,<br>
 <em>rowpitch</em>, <em>slicepitch</em>: integer,<br>
-<em>ptr</em>: lightuserdata.<br>
+<a href="#enqueue_params"><em>ptr</em></a>: lightuserdata.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueReadImage.html">clEnqueueReadImage</a>.</span></p>
 </li>
 </ul>
@@ -2045,10 +2043,10 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_write_image" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_write_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <em>blocking</em>, <em>origin</em>, <em>region</em>, <em>inrowpitch</em>, <em>inslicepitch</em>, <em>ptr</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small"><em>origin</em>, <em>region</em>: {integer3},<br>
+<p><em>event</em> = <strong>enqueue_write_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <em>origin</em>, <em>region</em>, <em>inrowpitch</em>, <em>inslicepitch</em>, <a href="#enqueue_params"><em>ptr</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small"><em>origin</em>, <em>region</em>: <a href="#enqueue_params">{integer}[3]</a>,<br>
 <em>inrowpitch</em>, <em>inslicepitch</em>: integer,<br>
-<em>ptr</em>: lightuserdata.<br>
+<a href="#enqueue_params"><em>ptr</em></a>: lightuserdata.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueWriteImage.html">clEnqueueWriteImage</a>.</span></p>
 </li>
 </ul>
@@ -2056,10 +2054,10 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_fill_image" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_fill_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <em>fillcolor</em>,  <em>origin</em>, <em>region</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_fill_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <em>fillcolor</em>,  <em>origin</em>, <em>region</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small"><em>fillcolor</em>: binary string,<br>
-<em>origin</em>, <em>region</em>: {integer3}.<br>
-The <em>fillcolor</em> binary string may encode either a <em>float</em>, a <em>float{4]</em>, a <em>int[4]</em>, or a <em>uint[4]</em>.<br>
+<em>origin</em>, <em>region</em>: <a href="#enqueue_params">{integer}[3]</a>.<br>
+The <em>fillcolor</em> binary string may encode either a <em>float</em>, a <em>float[4]</em>, a <em>int[4]</em>, or a <em>uint[4]</em>.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueFillImage.html">clEnqueueFillImage</a>.</span></p>
 </li>
 </ul>
@@ -2067,9 +2065,9 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_copy_image" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_copy_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>srcimage</em></a>, <a href="#image"><em>dstimage</em></a>, <em>srcorigin</em>, <em>dstorigin</em>, <em>region</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_copy_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>srcimage</em></a>, <a href="#image"><em>dstimage</em></a>, <em>srcorigin</em>, <em>dstorigin</em>, <em>region</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small"><em>srcorigin</em>, <em>dstorigin</em>: integer,<br>
-<em>region</em>: {integer3}.<br>
+<em>region</em>: <a href="#enqueue_params">{integer}[3]</a>.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyImage.html">clEnqueueCopyImage</a>.</span></p>
 </li>
 </ul>
@@ -2077,8 +2075,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_copy_image_to_buffer" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_copy_image_to_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>srcimage</em></a>, <a href="#buffer"><em>dstbuffer</em></a>, <em>srcorigin</em>, <em>region</em>, <em>dstoffset</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small"><em>srcorigin</em>, <em>region</em>: {integer3},<br>
+<p><em>event</em> = <strong>enqueue_copy_image_to_buffer</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>srcimage</em></a>, <a href="#buffer"><em>dstbuffer</em></a>, <em>srcorigin</em>, <em>region</em>, <em>dstoffset</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small"><em>srcorigin</em>, <em>region</em>: <a href="#enqueue_params">{integer}[3]</a>,<br>
 <em>dstoffset</em>: integer.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyImageToBuffer.html">clEnqueueCopyImageToBuffer</a>.</span></p>
 </li>
@@ -2087,9 +2085,9 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_copy_buffer_to_image" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_copy_buffer_to_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>srcbuffer</em></a>, <a href="#image"><em>dstimage</em></a>, <em>srcoffset</em>, <em>dstorigin</em>, <em>region</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_copy_buffer_to_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#buffer"><em>srcbuffer</em></a>, <a href="#image"><em>dstimage</em></a>, <em>srcoffset</em>, <em>dstorigin</em>, <em>region</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small"><em>srcoffset</em>: integer.<br>
-<em>dstorigin</em>, <em>region</em>: {integer3},<br>
+<em>dstorigin</em>, <em>region</em>: <a href="#enqueue_params">{integer}[3]</a>,<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyBufferToImage.html">clEnqueueCopyBufferToImage</a>.</span></p>
 </li>
 </ul>
@@ -2098,10 +2096,10 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_map_image" class="ulist">
 <ul>
 <li>
-<p><em>ptr</em>, <em>rowpitch</em>, <em>slicepitch</em>, <em>event</em> = <strong>enqueue_map_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <em>blocking</em>, <a href="#mapflags"><em>mapflags</em></a>, <em>origin</em>, <em>region</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small"><em>origin</em>, <em>region</em>: {integer3},<br>
+<p><a href="#enqueue_params"><em>ptr</em></a>, <em>rowpitch</em>, <em>slicepitch</em>, <em>event</em> = <strong>enqueue_map_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <a href="#mapflags"><em>mapflags</em></a>, <em>origin</em>, <em>region</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small"><em>origin</em>, <em>region</em>: <a href="#enqueue_params">{integer}[3]</a>,<br>
 Return values:<br>
-<em>ptr</em>: lightuserdata,<br>
+<a href="#enqueue_params"><em>ptr</em></a>: lightuserdata,<br>
 <em>rowpitch</em>, <em>slicepitch</em>: integer.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMapImage.html">clEnqueueMapImage</a>.</span></p>
 </li>
@@ -2110,8 +2108,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_unmap_image" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_unmap_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <em>ptr</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small">The <em>ptr</em> lightuserdata must contain a pointer returned by <em>cl.enqueue_map_image(&nbsp;)</em>.<br>
+<p><em>event</em> = <strong>enqueue_unmap_image</strong>(<a href="#queue"><em>queue</em></a>, <a href="#image"><em>image</em></a>, <a href="#enqueue_params"><em>ptr</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small">The <a href="#enqueue_params"><em>ptr</em></a> lightuserdata must contain a pointer returned by <em>cl.enqueue_map_image(&nbsp;)</em>.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueUnmapMemObject.html">clEnqueueUnmapMemObject</a>.</span></p>
 </li>
 </ul>
@@ -2122,18 +2120,16 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_acquire_gl_objects" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_acquire_gl_objects</strong>(<a href="#queue"><em>queue</em></a>, {<em>globject</em>}, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small"><em>globject</em>: <a href="#buffer">buffer</a> or  <a href="#image">image</a> (created from a GL object).<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueAcquireGLObjects.html">clEnqueueAcquireGLObjects</a>.</span></p>
+<p><em>event</em> = <strong>enqueue_acquire_gl_objects</strong>(<a href="#queue"><em>queue</em></a>, {<a href="#gl_objects"><em>buffer</em></a>|<a href="#gl_objects"><em>image</em></a>}, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueAcquireGLObjects.html">clEnqueueAcquireGLObjects</a>.</span></p>
 </li>
 </ul>
 </div>
 <div id="enqueue_release_gl_objects" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_release_gl_objects</strong>(<a href="#queue"><em>queue</em></a>, {<em>globject</em>}, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small"><em>globject</em>: <a href="#buffer">buffer</a> or  <a href="#image">image</a> (created from a GL object).<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueReleaseGLObjects.html">clEnqueueReleaseGLObjects</a>.</span></p>
+<p><em>event</em> = <strong>enqueue_release_gl_objects</strong>(<a href="#queue"><em>queue</em></a>, {<a href="#gl_objects"><em>buffer</em></a>|<a href="#gl_objects"><em>image</em></a>}, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueReleaseGLObjects.html">clEnqueueReleaseGLObjects</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -2143,7 +2139,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_svm_free" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_svm_free</strong>(<a href="#queue"><em>queue</em></a>, {<a href="#svm"><em>svm</em></a>}, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_svm_free</strong>(<a href="#queue"><em>queue</em></a>, {<a href="#svm"><em>svm</em></a>}, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMFree.html">clEnqueueSVMFree</a>.</span></p>
 </li>
 </ul>
@@ -2151,18 +2147,16 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_svm_memcpy" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_svm_memcpy</strong>(<a href="#queue"><em>queue</em></a>, <em>blocking</em>, <em>dstptr</em>, <em>srcptr</em>, <em>size</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small"><em>srcptr</em>, <em>dstptr</em>: lightuserdata.<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMMemcpy.html">clEnqueueSVMMemcpy</a>.</span></p>
+<p><em>event</em> = <strong>enqueue_svm_memcpy</strong>(<a href="#queue"><em>queue</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <a href="#enqueue_params"><em>dstptr</em></a>, <a href="#enqueue_params"><em>srcptr</em></a>, <em>size</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMMemcpy.html">clEnqueueSVMMemcpy</a>.</span></p>
 </li>
 </ul>
 </div>
 <div id="enqueue_svm_mem_fill" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_svm_mem_fill</strong>(<a href="#queue"><em>queue</em></a>, <em>ptr</em>, <em>pattern</em>, <em>size</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small"><em>ptr</em>: lightuserdata,<br>
-<em>pattern</em>: binary string<br>
+<p><em>event</em> = <strong>enqueue_svm_mem_fill</strong>(<a href="#queue"><em>queue</em></a>, <a href="#enqueue_params"><em>ptr</em></a>, <em>pattern</em>, <em>size</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small"><em>pattern</em>: binary string<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMMemFill.html">clEnqueueSVMMemFill</a>.</span></p>
 </li>
 </ul>
@@ -2171,7 +2165,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_svm_map" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_svm_map</strong>(<a href="#queue"><em>queue</em></a>, <em>blocking</em>, <a href="#mapflags"><em>mapflags</em></a>, <em>ptr</em>, <em>size</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_svm_map</strong>(<a href="#queue"><em>queue</em></a>, <a href="#enqueue_params"><em>blocking</em></a>, <a href="#mapflags"><em>mapflags</em></a>, <a href="#enqueue_params"><em>ptr</em></a>, <em>size</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMMap.html">clEnqueueSVMMap</a>.</span></p>
 </li>
 </ul>
@@ -2179,9 +2173,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_svm_unmap" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_svm_unmap</strong>(<a href="#queue"><em>queue</em></a>, <em>ptr</em>, [{<em>we</em>}, <em>ge</em>])<br>
-<span class="small">The <em>ptr</em> lightuserdata must contain a pointer returned by <em>cl.enqueue_svm_map(&nbsp;)</em>.<br>
-Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMUnmap.html">clEnqueueSVMUnmap</a>.</span></p>
+<p><em>event</em> = <strong>enqueue_svm_unmap</strong>(<a href="#queue"><em>queue</em></a>, <a href="#enqueue_params"><em>ptr</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMUnmap.html">clEnqueueSVMUnmap</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -2189,7 +2182,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_svm_migrate_mem" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_svm_migrate_mem</strong>(<a href="#queue"><em>queue</em></a>, <a href="#migrateflags"><em>migrateflags</em></a>, {<a href="#svm"><em>svm</em></a>}, {<em>offset</em>}, {<em>size</em>}, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_svm_migrate_mem</strong>(<a href="#queue"><em>queue</em></a>, <a href="#migrateflags"><em>migrateflags</em></a>, {<a href="#svm"><em>svm</em></a>}, {<em>offset</em>}, {<em>size</em>}, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMMigrateMem.html">clEnqueueSVMMigrateMem</a>.</span></p>
 </li>
 </ul>
@@ -2200,9 +2193,9 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_ndrange_kernel" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_ndrange_kernel</strong>(<a href="#queue"><em>queue</em></a>, <a href="#kernel"><em>kernel</em></a>, <em>N</em>, <em>globoffset</em>, <em>globsize</em>, <em>locsize</em>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_ndrange_kernel</strong>(<a href="#queue"><em>queue</em></a>, <a href="#kernel"><em>kernel</em></a>, <em>N</em>, <em>globoffset</em>, <em>globsize</em>, <em>locsize</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small"><em>N</em>: 1, 2 or 3 (work dimension),<br>
-<em>globoffset</em>, <em>globsize</em>, <em>locsize</em>: {integerN},<br>
+<em>globoffset</em>, <em>globsize</em>, <em>locsize</em>: <a href="#enqueue_params">{integer}[3]</a> (of which only the first <em>N</em> are meaningful),<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueNDRangeKernel.html">clEnqueueNDRangeKernel</a>.</span></p>
 </li>
 </ul>
@@ -2210,7 +2203,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_task" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_task</strong>(<a href="#queue"><em>queue</em></a>, <a href="#kernel"><em>kernel</em></a>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_task</strong>(<a href="#queue"><em>queue</em></a>, <a href="#kernel"><em>kernel</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small">Equivalent to <em>cl.enqueue_ndrange_kernel(cq, kernel, 1, nil, {1}, {1}, {we}, ge)</em>.</span></p>
 </li>
 </ul>
@@ -2239,7 +2232,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clF
 <div id="enqueue_marker" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_marker</strong>(<a href="#queue"><em>queue</em></a>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_marker</strong>(<a href="#queue"><em>queue</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMarkerWithWaitList.html">clEnqueueMarkerWithWaitList</a>.</span></p>
 </li>
 </ul>
@@ -2247,7 +2240,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clF
 <div id="enqueue_barrier" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_barrier</strong>(<a href="#queue"><em>queue</em></a>, [{<em>we</em>}, <em>ge</em>])<br>
+<p><em>event</em> = <strong>enqueue_barrier</strong>(<a href="#queue"><em>queue</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueBarrierWithWaitList.html">clEnqueueBarrierWithWaitList</a>.</span></p>
 </li>
 </ul>
@@ -2418,8 +2411,8 @@ Values: '<em>ndrange kernel</em>', '<em>task</em>', '<em>native kernel</em>', '<
 </div>
 <div id="contextinfo" class="paragraph">
 <p><span class="small"><strong>contextinfo</strong>: cl.CONTEXT_XXX (<em>cl_context_info</em>)<br>
-'<em>reference_count</em>': integer<br>
-'<em>num_devices</em>': integer<br>
+'<em>reference count</em>': integer<br>
+'<em>num devices</em>': integer<br>
 '<em>devices</em>': {<a href="#device">device</a>}<br>
 '<em>properties</em>': <a href="#contextproperties">contextproperties</a><br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetContextInfo.html">clGetContextInfo</a>.</span></p>
@@ -2632,9 +2625,9 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clG
 '<em>flags</em>': <a href="#memflags">memflags</a><br>
 '<em>size</em>': integer<br>
 '<em>offset</em>': integer<br>
-'<em>map_count</em>': integer<br>
+'<em>map count</em>': integer<br>
 '<em>context</em>': <a href="#context">context</a><br>
-'<em>associated</em> memobject':  <a href="#buffer">buffer</a> or  <a href="#image">image</a> or  <a href="#pipe">pipe</a> or <em>nil</em><br>
+'<em>associated memobject':  <a href="#buffer">buffer</a> or  <a href="#image">image</a> or  <a href="#pipe">pipe</a> or _nil</em><br>
 '<em>uses svm pointer</em>': boolean<br>
 '<em>host ptr</em>': lightuserdata (<em>void*</em>) or <em>nil</em><br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetMemObjectInfo.html">clGetMemObjectInfo</a>.</span></p>

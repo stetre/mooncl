@@ -15,15 +15,13 @@
 [small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateFromGLRenderBuffer.html[clCreateFromGLRenderBuffer].#
 
 [[get_gl_object_info]]
-* <<globjecttype, _globjecttype_>> = *get_gl_object_type*(_globject_) +
-_name_ = *get_gl_object_name*(_globject_) +
-[small]#_globject_ = <<buffer, _buffer_>> | <<image, _image_>>. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLObjectInfo.html[clGetGLObjectInfo].#
+* <<globjecttype, _globjecttype_>> = *get_gl_object_type*(<<buffer, _buffer_>>|<<image, _image_>>) +
+_name_ = *get_gl_object_name*(<<buffer, _buffer_>>|<<image, _image_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLObjectInfo.html[clGetGLObjectInfo].#
 
 [[get_gl_texture_info]]
-* _value_ = *get_gl_texture_info*(_globject_, <<gltextureinfo, _gltextureinfo_>>) +
-[small]#_globject_ = <<buffer, _buffer_>> | <<image, _image_>>. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLTextureInfo.html[clGetGLTextureInfo].#
+* _value_ = *get_gl_texture_info*(<<buffer, _buffer_>>|<<image, _image_>>, <<gltextureinfo, _gltextureinfo_>>) +
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLTextureInfo.html[clGetGLTextureInfo].#
 
 [[get_gl_context_info]]
 * _value_ = *get_gl_context_info*(<<platform, _platform_>>, <<contextproperties, _contextproperties_>>, <<glcontextinfo, _glcontextinfo_>>) +

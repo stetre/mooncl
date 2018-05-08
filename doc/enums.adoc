@@ -69,8 +69,8 @@ Values: '_ndrange kernel_', '_task_', '_native kernel_', '_read buffer_', '_writ
 
 [[contextinfo]]
 [small]#*contextinfo*: cl.CONTEXT_XXX (_cl_context_info_) +
-'_reference_count_': integer +
-'_num_devices_': integer +
+'_reference count_': integer +
+'_num devices_': integer +
 '_devices_': {<<device, device>>} +
 '_properties_': <<contextproperties, contextproperties>> +
 Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetContextInfo.html[clGetContextInfo].#
@@ -287,9 +287,9 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelW
 '_flags_': <<memflags, memflags>> +
 '_size_': integer +
 '_offset_': integer +
-'_map_count_': integer +
+'_map count_': integer +
 '_context_': <<context, context>> +
-'_associated_ memobject':  <<buffer, buffer>> or  <<image, image>> or  <<pipe, pipe>> or _nil_ +
+'_associated memobject':  <<buffer, buffer>> or  <<image, image>> or  <<pipe, pipe>> or _nil_ +
 '_uses svm pointer_': boolean +
 '_host ptr_': lightuserdata (_void*_) or _nil_ +
 Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetMemObjectInfo.html[clGetMemObjectInfo].#

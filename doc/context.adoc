@@ -6,7 +6,8 @@
 * _context_ = *create_context*(<<platform, _platform_>>, [{<<device, _device_>>}], [<<contextproperties, _contextproperties_>>]) +
 _context_ = *create_context*(<<platform, _platform_>>,  <<devicetypeflags, _devicetypeflags_>>, [<<contextproperties, _contextproperties_>>]) +
 [small]#Note: the '_platform_' field in <<contextproperties, _contextproperties_>> is ignored by this function (the platform must be passed as standalone parameter). +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateContext.html[clCreateContext].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateContext.html[clCreateContext] -
+https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateContextFromType.html[clCreateContextFromType].#
 
 
 [[retain_context]]
