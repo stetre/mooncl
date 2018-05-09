@@ -1337,18 +1337,20 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clL
 <div id="set_kernel_arg" class="ulist">
 <ul>
 <li>
-<p><strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>object</em>)<br>
-<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>size</em>, [<em>ptr</em>])<br>
-<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>primtype</em>, <em>value</em>)<br>
-<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>primtype</em>, <em>value<sub>1</sub></em>, <em>&#8230;&#8203;</em>, <em>value<sub>N</sub></em>)<br>
-<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>primtype</em>, {<em>value<sub>1</sub></em>, <em>&#8230;&#8203;</em>, <em>value<sub>N</sub></em>})<br>
+<p><strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>size</em>, [<em>ptr</em>])<br>
 <strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>nil</em>, <em>data</em>)<br>
+<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#primtype"><em>primtype</em></a>, <em>value</em>)<br>
+<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#primtype"><em>primtype</em></a>, <em>value<sub>1</sub></em>, <em>&#8230;&#8203;</em>, <em>value<sub>N</sub></em>)<br>
+<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#primtype"><em>primtype</em></a>, {<em>value<sub>1</sub></em>, <em>&#8230;&#8203;</em>, <em>value<sub>N</sub></em>})<br>
+<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#buffer"><em>buffer</em></a>)<br>
+<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#image"><em>image</em></a>)<br>
+<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#pipe"><em>pipe</em></a>)<br>
+<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#sampler"><em>sampler</em></a>)<br>
+<strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#queue"><em>queue</em></a>)<br>
 <span class="small"><em>argindex</em>: 0-based argument index,<br>
-<em>object</em>: <a href="#buffer">buffer</a> | <a href="#image">image</a> | <a href="#pipe">pipe</a> | <a href="#sampler">sampler</a> | <a href="#queue">queue</a>,<br>
-<em>size</em> : integer,<br>
-<em>ptr</em> : lightuserdata (containing a valid <em>void*</em> to <em>size</em> bytes of data, or <em>nil</em> for local memory),<br>
-<em>value</em>, <em>value<sub>i</sub></em>: integer or number (according to <a href="#primtype"><em>primtype</em></a>),<br>
-<em>data</em>: binary string.<br>
+<em>ptr</em> : lightuserdata containing a valid <em>void*</em> to <em>size</em> bytes of data, or <em>nil</em> to allocate <em>size</em> bytes of local memory,<br>
+<em>data</em>: binary string,<br>
+<em>value</em>, <em>value<sub>i</sub></em>: integer or number (according to <em>primtype</em>).<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetKernelArg.html">clSetKernelArg</a>.</span></p>
 </li>
 </ul>

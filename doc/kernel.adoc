@@ -21,18 +21,20 @@
 https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseKernel.html[clReleaseKernel].#
 
 [[set_kernel_arg]]
-* *set_kernel_arg*(_kernel_, _argindex_, _object_) +
-*set_kernel_arg*(_kernel_, _argindex_, _size_, [_ptr_]) +
-*set_kernel_arg*(_kernel_, _argindex_, _primtype_, _value_) +
-*set_kernel_arg*(_kernel_, _argindex_, _primtype_, _value~1~_, _..._, _value~N~_) +
-*set_kernel_arg*(_kernel_, _argindex_, _primtype_, {_value~1~_, _..._, _value~N~_}) +
+* *set_kernel_arg*(_kernel_, _argindex_, _size_, [_ptr_]) +
 *set_kernel_arg*(_kernel_, _argindex_, _nil_, _data_) +
+*set_kernel_arg*(_kernel_, _argindex_, <<primtype, _primtype_>>, _value_) +
+*set_kernel_arg*(_kernel_, _argindex_, <<primtype, _primtype_>>, _value~1~_, _..._, _value~N~_) +
+*set_kernel_arg*(_kernel_, _argindex_, <<primtype, _primtype_>>, {_value~1~_, _..._, _value~N~_}) +
+*set_kernel_arg*(_kernel_, _argindex_, <<buffer, _buffer_>>) +
+*set_kernel_arg*(_kernel_, _argindex_, <<image, _image_>>) +
+*set_kernel_arg*(_kernel_, _argindex_, <<pipe, _pipe_>>) +
+*set_kernel_arg*(_kernel_, _argindex_, <<sampler, _sampler_>>) +
+*set_kernel_arg*(_kernel_, _argindex_, <<queue, _queue_>>) +
 [small]#_argindex_: 0-based argument index, +
-_object_: <<buffer, buffer>> | <<image, image>> | <<pipe, pipe>> | <<sampler, sampler>> | <<queue, queue>>, +
-_size_ : integer, +
-_ptr_ : lightuserdata (containing a valid _void*_ to _size_ bytes of data, or _nil_ for local memory), +
-_value_, _value~i~_: integer or number (according to <<primtype, _primtype_>>), +
-_data_: binary string. +
+_ptr_ : lightuserdata containing a valid _void*_ to _size_ bytes of data, or _nil_ to allocate _size_ bytes of local memory, +
+_data_: binary string, +
+_value_, _value~i~_: integer or number (according to _primtype_). +
 Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetKernelArg.html[clSetKernelArg].#
 
 [[set_kernel_arg_svm_pointer]]
