@@ -289,7 +289,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelW
 '_offset_': integer +
 '_map count_': integer +
 '_context_': <<context, context>> +
-'_associated memobject':  <<buffer, buffer>> or  <<image, image>> or  <<pipe, pipe>> or _nil_ +
+'_associated memobject_':  <<buffer, buffer>> or  <<image, image>> or  <<pipe, pipe>> or _nil_ +
 '_uses svm pointer_': boolean +
 '_host ptr_': lightuserdata (_void*_) or _nil_ +
 Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetMemObjectInfo.html[clGetMemObjectInfo].#

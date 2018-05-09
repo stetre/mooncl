@@ -1343,7 +1343,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clL
 <strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>primtype</em>, <em>value<sub>1</sub></em>, <em>&#8230;&#8203;</em>, <em>value<sub>N</sub></em>)<br>
 <strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>primtype</em>, {<em>value<sub>1</sub></em>, <em>&#8230;&#8203;</em>, <em>value<sub>N</sub></em>})<br>
 <strong>set_kernel_arg</strong>(<em>kernel</em>, <em>argindex</em>, <em>nil</em>, <em>data</em>)<br>
-<span class="small"><em>object</em>: <a href="#buffer">buffer</a> | <a href="#image">image</a> | <a href="#pipe">pipe</a> | <a href="#sampler">sampler</a> | <a href="#queue">queue</a>,<br>
+<span class="small"><em>argindex</em>: 0-based argument index,<br>
+<em>object</em>: <a href="#buffer">buffer</a> | <a href="#image">image</a> | <a href="#pipe">pipe</a> | <a href="#sampler">sampler</a> | <a href="#queue">queue</a>,<br>
 <em>size</em> : integer,<br>
 <em>ptr</em> : lightuserdata (containing a valid <em>void*</em> to <em>size</em> bytes of data, or <em>nil</em> for local memory),<br>
 <em>value</em>, <em>value<sub>i</sub></em>: integer or number (according to <a href="#primtype"><em>primtype</em></a>),<br>
@@ -1357,7 +1358,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clS
 <li>
 <p><strong>set_kernel_arg_svm_pointer</strong>(<em>kernel</em>, <em>argindex</em>, <em>ptr</em>)<br>
 <strong>set_kernel_arg_svm_pointer</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#svm"><em>svm</em></a>, <em>offset</em>)<br>
-<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetKernelArgSVMPointer.html">clSetKernelArgSVMPointer</a>.</span></p>
+<span class="small"><em>argindex</em>: 0-based argument index.<br>
+Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetKernelArgSVMPointer.html">clSetKernelArgSVMPointer</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1381,7 +1383,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clS
 <ul>
 <li>
 <p><em>value</em> = <strong>get_kernel_arg_info</strong>(<em>kernel</em>, <em>argindex</em>, <a href="#kernelarginfo"><em>kernelarginfo</em></a>)<br>
-<span class="small">Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelArgInfo.html">clGetKernelArgInfo</a>.</span></p>
+<span class="small"><em>argindex</em>: 0-based argument index.<br>
+Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelArgInfo.html">clGetKernelArgInfo</a>.</span></p>
 </li>
 </ul>
 </div>
@@ -1899,17 +1902,17 @@ for execution on devices.</p>
 <div id="enqueue_params" class="ulist unstyled">
 <ul class="unstyled">
 <li>
-<p>- the <strong><em>blocking</em></strong> parameter is a boolean indicating if the call must block or not until the
-command has been executed;</p>
+<p>- the <strong><em>blocking</em></strong> parameter is a boolean indicating if the call must block until the
+command has been executed (<em>true</em>), or return immediately after the command has been enqueued (<em>false</em>);</p>
 </li>
 <li>
 <p>- the <strong>{<em>we</em>}</strong> parameter ('wait events') is an optional list of <a href="#event"><em>events</em></a> on which to wait
 for before command execution;</p>
 </li>
 <li>
-<p>- the <strong><em>ge</em></strong> parameter ('generate event') is an optional boolean that defaults to <em>false</em>;
-if <em>ge</em> is given a <em>true</em> value, then the function generates and returns an <a href="#event"><em>event</em></a>
-that identifies the enqueued command; otherwise the <em>event</em> return value is <em>nil</em>;</p>
+<p>- the <strong><em>ge</em></strong> parameter ('generate event') is an optional boolean indicating if the function must
+generate and return an <a href="#event"><em>event</em></a> identifying the command (<em>ge</em>=<em>true</em>), or if it
+must not (<em>ge</em>=<em>false</em> or <em>nil</em>, in which case the returned <em>event</em> is <em>nil</em>);</p>
 </li>
 <li>
 <p>- the <strong><em>{integer}[3]</em></strong> notation denotes an array of up to 3 integers
@@ -2021,7 +2024,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <ul>
 <li>
 <p><em>event</em> = <strong>enqueue_migrate_mem_objects</strong>(<a href="#queue"><em>queue</em></a>, <a href="#migrateflags"><em>migrateflags</em></a>, {<em>memobject</em>}, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
-<span class="small"><em>memobject</em>: <a href="#buffer">buffer</a>|<a href="#image">image</a>|<a href="#pipe">pipe</a>.<br>
+<span class="small"><em>memobject</em>: <a href="#buffer">buffer</a> | <a href="#image">image</a> | <a href="#pipe">pipe</a>.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMigrateMemObjects.html">clEnqueueMigrateMemObjects</a>.</span></p>
 </li>
 </ul>
@@ -2193,7 +2196,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <div id="enqueue_ndrange_kernel" class="ulist">
 <ul>
 <li>
-<p><em>event</em> = <strong>enqueue_ndrange_kernel</strong>(<a href="#queue"><em>queue</em></a>, <a href="#kernel"><em>kernel</em></a>, <em>N</em>, <em>globoffset</em>, <em>globsize</em>, <em>locsize</em>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
+<p><em>event</em> = <strong>enqueue_ndrange_kernel</strong>(<a href="#queue"><em>queue</em></a>, <a href="#kernel"><em>kernel</em></a>, <em>N</em>, [<em>globoffset</em>], <em>globsize</em>, [<em>locsize</em>], [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
 <span class="small"><em>N</em>: 1, 2 or 3 (work dimension),<br>
 <em>globoffset</em>, <em>globsize</em>, <em>locsize</em>: <a href="#enqueue_params">{integer}[3]</a> (of which only the first <em>N</em> are meaningful),<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueNDRangeKernel.html">clEnqueueNDRangeKernel</a>.</span></p>
@@ -2204,7 +2207,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clE
 <ul>
 <li>
 <p><em>event</em> = <strong>enqueue_task</strong>(<a href="#queue"><em>queue</em></a>, <a href="#kernel"><em>kernel</em></a>, [<a href="#enqueue_params">{<em>we</em>}, <em>ge</em></a>])<br>
-<span class="small">Equivalent to <em>cl.enqueue_ndrange_kernel(cq, kernel, 1, nil, {1}, {1}, {we}, ge)</em>.</span></p>
+<span class="small">Equivalent to <em>cl.enqueue_ndrange_kernel(cq, kernel, 1, {0}, {1}, {1}, {we}, ge)</em>.</span></p>
 </li>
 </ul>
 </div>
@@ -2627,7 +2630,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clG
 '<em>offset</em>': integer<br>
 '<em>map count</em>': integer<br>
 '<em>context</em>': <a href="#context">context</a><br>
-'<em>associated memobject':  <a href="#buffer">buffer</a> or  <a href="#image">image</a> or  <a href="#pipe">pipe</a> or _nil</em><br>
+'<em>associated memobject</em>':  <a href="#buffer">buffer</a> or  <a href="#image">image</a> or  <a href="#pipe">pipe</a> or <em>nil</em><br>
 '<em>uses svm pointer</em>': boolean<br>
 '<em>host ptr</em>': lightuserdata (<em>void*</em>) or <em>nil</em><br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetMemObjectInfo.html">clGetMemObjectInfo</a>.</span></p>
