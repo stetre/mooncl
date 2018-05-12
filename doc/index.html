@@ -1413,7 +1413,7 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clG
 <div class="paragraph">
 <p>Event objects can be created in two ways:
 with the <a href="#create_user_event">create_user_event</a>(&nbsp;) function (<strong>user events</strong>), or
-setting the <em>ge</em> parameter to <em>true</em> when issuing a command with a <a href="#commands">enqueue_xxx</a>(&nbsp;)
+by setting the <em>ge</em> parameter to <em>true</em> when issuing a command with a <a href="#commands">enqueue_xxx</a>(&nbsp;)
 call (<strong>command events</strong>).</p>
 </div>
 <div id="create_user_event" class="ulist">
@@ -1488,8 +1488,8 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clS
 <ul>
 <li>
 <p><em>status</em> = <strong>check_event_callback</strong>(<em>event</em>, <em>type</em>)<br>
-<span class="small">Checks if the C callback registered with <a href="#set_event_callback">set_event_callback</a>(&nbsp;) was executed. If not, it returns <em>nil</em>, otherwise it returns the status that was passed to the callback, which
-may be a <a href="#executionstatus">executionstatus</a> value, or an integer code.</span></p>
+<span class="small">Checks if the C callback registered with <a href="#set_event_callback">set_event_callback</a>(&nbsp;) was executed. Returns the status that was passed to the callback, which
+may be a <a href="#executionstatus">executionstatus</a> value or an integer code, or <em>false</em> if the callback was not executed.</span></p>
 </li>
 </ul>
 </div>

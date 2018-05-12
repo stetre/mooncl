@@ -171,7 +171,7 @@ static int SetEventCallback(lua_State *L)
         {
 #define SET(what) do {                                              \
     udinfo->called_##what = 0;                                      \
-    ec = cl.SetEventCallback(event, type, Callback_##what, ud);      \
+    ec = cl.SetEventCallback(event, type, Callback_##what, ud);     \
 } while(0)
         case CL_SUBMITTED:  SET(submitted); break;
         case CL_COMPLETE:   SET(complete); break;
@@ -196,13 +196,13 @@ static int CheckEventCallback(lua_State *L)
     udinfo = (udinfo_t*)ud->info;
     
     if(!udinfo)
-        return 0;
+        { lua_pushboolean(L, 0); return 1; }
     
     switch(type)
         {
 #define CHECK(what) do {                                            \
-    if(!udinfo->called_##what) return 0;                            \
-    udinfo->called_##what = 0;                                      \
+    if(!udinfo->called_##what) { lua_pushboolean(L, 0); return 1; } \
+    /* udinfo->called_##what = 0;                                 */\
     status = udinfo->status_##what;                                 \
 } while(0)
         case CL_SUBMITTED:  CHECK(submitted); break;

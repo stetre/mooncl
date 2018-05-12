@@ -2,9 +2,9 @@
 [[event]]
 === event
 
-Event objects can be created in two ways: 
-with the <<create_user_event, create_user_event>>(&nbsp;) function (*user events*), or  
-setting the _ge_ parameter to _true_ when issuing a command with a <<commands, enqueue_xxx>>(&nbsp;)
+Event objects can be created in two ways:
+with the <<create_user_event, create_user_event>>(&nbsp;) function (*user events*), or
+by setting the _ge_ parameter to _true_ when issuing a command with a <<commands, enqueue_xxx>>(&nbsp;)
 call (*command events*).
 
 [[create_user_event]]
@@ -50,7 +50,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetEventCa
 
 [[check_event_callback]]
 * _status_ = *check_event_callback*(_event_, _type_) +
-[small]#Checks if the C callback registered with <<set_event_callback, set_event_callback>>(&nbsp;) was executed. If not, it returns _nil_, otherwise it returns the status that was passed to the callback, which
-may be a <<executionstatus, executionstatus>> value, or an integer code.#
+[small]#Checks if the C callback registered with <<set_event_callback, set_event_callback>>(&nbsp;) was executed. Returns the status that was passed to the callback, which
+may be a <<executionstatus, executionstatus>> value or an integer code, or _false_ if the callback was not executed.#
 
 
