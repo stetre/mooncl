@@ -41,7 +41,7 @@ Tgt	:= mooncl
 Src := $(wildcard *.c)
 Objs := $(Src:.c=.o)
 
-INCDIR = -I./include
+INCDIR = -I./include -I/usr/include/lua$(LUAVER)
  
 COPT	+= -O2
 #COPT	+= -O0 -g
