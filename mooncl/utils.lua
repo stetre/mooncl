@@ -61,7 +61,7 @@ function cl.make_program_with_source(context, source, devices, options)
 end
 
 function cl.make_program_with_sourcefile(context, filename, devices, options)
-   local ok, program = pcall(cl.create_program_with_sourcefile, context, source)
+   local ok, program = pcall(cl.create_program_with_sourcefile, context, filename)
    if not ok then error(program, 2) end
    local ok, errmsg = pcall(cl.build_program, program, devices, options)
    if not ok then error(errmsg, 2) end
