@@ -7,3 +7,4 @@
 core.*
 local/
 src/TODO
+examples/hands-on-opencl/seq-C/_*
