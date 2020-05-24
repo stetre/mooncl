@@ -6,21 +6,21 @@
 * _context_ = *create_context*(<<platform, _platform_>>, [{<<device, _device_>>}], [<<contextproperties, _contextproperties_>>]) +
 _context_ = *create_context*(<<platform, _platform_>>,  <<devicetypeflags, _devicetypeflags_>>, [<<contextproperties, _contextproperties_>>]) +
 [small]#Note: the '_platform_' field in <<contextproperties, _contextproperties_>> is ignored by this function (the platform must be passed as standalone parameter). +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateContext.html[clCreateContext] -
-https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateContextFromType.html[clCreateContextFromType].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateContext.html[clCreateContext] -
+https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateContextFromType.html[clCreateContextFromType].#
 
 
 [[retain_context]]
 * *retain_context*(_context_) +
 *release_context*(_context_) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainContext.html[clRetainContext] -
-https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseContext.html[clReleaseContext].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clRetainContext.html[clRetainContext] -
+https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clReleaseContext.html[clReleaseContext].#
 
 [[get_context_info]]
 * _value_ = *get_context_info*(_context_, <<contextinfo,_contextinfo_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetContextInfo.html[clGetContextInfo].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetContextInfo.html[clGetContextInfo].#
 
 [[terminate_context]]
 * *terminate_context*(_context_) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clTerminateContextKHR.html[clTerminateContextKHR].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clTerminateContextKHR.html[clTerminateContextKHR].#
 

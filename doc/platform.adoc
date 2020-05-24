@@ -4,23 +4,15 @@
 
 [[get_platform_ids]]
 * {_platform_} = *get_platform_ids*( ) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPlatformIDs.html[clGetPlatformIDs].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetPlatformIDs.html[clGetPlatformIDs].#
 
 [[get_platform_info]]
 * _value_ = *get_platform_info*(_platform_, <<platforminfo, _platforminfo_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPlatformInfo.html[clGetPlatformInfo].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetPlatformInfo.html[clGetPlatformInfo].#
 
 [[is_extension_supported]]
 * _boolean_ = *is_extension_supported*(_platform_|_device_, _extensionname_) +
 [small]#_extensionname_: string (e.g. '_cl_khr_gl_sharing_') +
 Returns _true_ if the given extension is supported by the given _platform_ or _device_, _false_ otherwise. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/EXTENSION.html[EXTENSION].#
-
-////
-
-[[]]
-*  = **( ) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/cl.html[].#
-
-////
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/EXTENSION.html[EXTENSION].#
 

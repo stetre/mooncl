@@ -4,17 +4,17 @@
 
 [[create_sampler]]
 * _sampler_ = *create_sampler*(<<context, _context_>>, [<<samplerproperties, _samplerproperties_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateSamplerWithProperties.html[clCreateSamplerWithProperties].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateSamplerWithProperties.html[clCreateSamplerWithProperties].#
 
 [[retain_sampler]]
 * *retain_sampler*(_sampler_) +
 *release_sampler*(_sampler_) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainSampler.html[clRetainSampler] - 
-https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseSampler.html[clReleaseSampler].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clRetainSampler.html[clRetainSampler] - 
+https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clReleaseSampler.html[clReleaseSampler].#
 
 
 [[get_sampler_info]]
 * _value_ = *get_sampler_info*(_sampler_, <<samplerinfo, _samplerinfo_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetSamplerInfo.html[clGetSamplerInfo].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetSamplerInfo.html[clGetSamplerInfo].#
 
 

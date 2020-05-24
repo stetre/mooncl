@@ -7,7 +7,7 @@
 _program_ = *create_program_with_sourcefile*(<<context, _context_>>, _filename_) +
 [small]#_source_: string containing the program source code, +
 _filename_: name of a file containing the program source code. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithSource.html[clCreateProgramWithSource].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateProgramWithSource.html[clCreateProgramWithSource].#
 
 [[build_program]]
 * *build_program*(_program_, [{<<device, _device_>>}], [_options_]) +
@@ -15,49 +15,49 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProg
 Raises an error if the underlying call to _clBuildProgram(&nbsp;)_ fails. +
 If the error is a '_build program failure_', also collects and prints the logs from all the devices
 in the given list. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clBuildProgram.html[clBuildProgram].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clBuildProgram.html[clBuildProgram].#
 
 [[make_program_with_source]]
 *  _program_ = *make_program_with_source*(<<context, _context_>>, _source_, [{<<device, _device_>>}], [_options_]) +
 _program_ = *make_program_with_sourcefile*(<<context, _context_>>, _filename_, [{<<device, _device_>>}], [_options_]) +
 [small]#Combined create and build program. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithSource.html[clCreateProgramWithSource] -
-https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clBuildProgram.html[clBuildProgram].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateProgramWithSource.html[clCreateProgramWithSource] -
+https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clBuildProgram.html[clBuildProgram].#
 
 [[retain_program]]
 * *retain_program*(_program_) +
 *release_program*(_program_) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainProgram.html[clRetainProgram] -
-https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseProgram.html[clReleaseProgram].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clRetainProgram.html[clRetainProgram] -
+https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clReleaseProgram.html[clReleaseProgram].#
 
 [[unload_platform_compiler]]
 * *unload_platform_compiler*(<<platform, _platform_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clUnloadPlatformCompiler.html[clUnloadPlatformCompiler].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clUnloadPlatformCompiler.html[clUnloadPlatformCompiler].#
 
 [[get_program_info]]
 * _value_ = *get_program_info*(_program_, <<programinfo, _programinfo_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetProgramInfo.html[clGetProgramInfo].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetProgramInfo.html[clGetProgramInfo].#
 
 [[get_program_build_info]]
 * _value_ = *get_program_build_info*(_program_, <<device, _device_>>, <<programbuildinfo, _programbuildinfo_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetProgramBuildInfo.html[clGetProgramBuildInfo].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetProgramBuildInfo.html[clGetProgramBuildInfo].#
 
 '''
 
 [[create_program_with_binary]]
 * _program_, {errmsg} = *create_program_with_binary*(<<context, _context_>>, {<<device, _device_>>}, {binary}) +
 [small]#Returns _nil_ followed by a list of error messages (one per device/binary) if an invalid binary is encountered for any device. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithBinary.html[clCreateProgramWithBinary].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateProgramWithBinary.html[clCreateProgramWithBinary].#
 
 [[create_program_with_built_in_kernels]]
 * _program_ = *create_program_with_built_in_kernels*(<<context, _context_>>, {<<device, _device_>>}, {_kernelname_}) +
 [small]#_kernelname_: string. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithBuiltInKernels.html[clCreateProgramWithBuiltInKernels].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateProgramWithBuiltInKernels.html[clCreateProgramWithBuiltInKernels].#
 
 [[create_program_with_il]]
 * _program_ = *create_program_with_il*(<<context, _context_>>, _il_) +
 [small]#_il_: binary string. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProgramWithIL.html[clCreateProgramWithIL].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateProgramWithIL.html[clCreateProgramWithIL].#
 
 '''
 
@@ -66,7 +66,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateProg
 [small]#_options_: string. +
 Returns _false_ followed by an error message if the underlying call to _clBuildProgram(&nbsp;)_ fails,
 otherwise it returns _true_. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clBuildProgram.html[clBuildProgram].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clBuildProgram.html[clBuildProgram].#
 
 [[compile_program]]
 *  _ok_, _errmsg_ = *compile_program_*(_program_, [{<<device, _device_>>}], [_options_], [_headers_, _headernames_]) +
@@ -75,7 +75,7 @@ _headers_: {program}, +
 _headernames_: {string}. +
 Returns _false_ followed by an error message if the underlying call to _clCompileProgram(&nbsp;)_ fails,
 otherwise it returns _true_. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCompileProgram.html[clCompileProgram].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCompileProgram.html[clCompileProgram].#
 
 [[link_program]]
 * _program_, _errmsg_ = *link_program_*(_program_, [{<<device, _device_>>}], [_options_], [_programs_]) +
@@ -83,5 +83,5 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCompilePro
 _programs_: {program}. +
 If the underlying call to _clLinkProgram(&nbsp;)_ fails, this function returns _nil_ followed by 
 an error message. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clLinkProgram.html[clLinkProgram].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clLinkProgram.html[clLinkProgram].#
 

@@ -4,37 +4,37 @@
 
 [[get_device_ids]]
 * {_device_} = *get_device_ids*(<<platform, _platform_>>, <<devicetypeflags, _devicetypeflags_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetDeviceIDs.html[clGetDeviceIDs].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetDeviceIDs.html[clGetDeviceIDs].#
 
 [[create_sub_devices]]
 * {_device_} = *create_sub_devices*(_device_, <<devicepartitionproperty, _devicepartitionproperty_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateSubDevices.html[clCreateSubDevices].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateSubDevices.html[clCreateSubDevices].#
 
 
 [[retain_device]]
 * *retain_device*(_device_) +
 *release_device*(_device_) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clRetainDevice.html[clRetainDevice] - 
-https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clReleaseDevice.html[clReleaseDevice].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clRetainDevice.html[clRetainDevice] - 
+https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clReleaseDevice.html[clReleaseDevice].#
 
 
 [[get_device_info]]
 * _value_ = *get_device_info*(_device_, <<deviceinfo, _deviceinfo_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetDeviceInfo.html[clGetDeviceInfo].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetDeviceInfo.html[clGetDeviceInfo].#
 
 [[set_default_device_command_queue]]
 * *set_default_device_command_queue*(<<context, _context_>>, <<device, _device_>>, <<queue, _queue_>>) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetDefaultDeviceCommandQueue.html[clSetDefaultDeviceCommandQueue].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clSetDefaultDeviceCommandQueue.html[clSetDefaultDeviceCommandQueue].#
 
 
 [[get_device_and_host_timer]]
 * _device_timestamp_, _host_timestamp_ = *get_device_and_host_timer*(_device_) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetDeviceAndHostTimer.html[clGetDeviceAndHostTimer].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetDeviceAndHostTimer.html[clGetDeviceAndHostTimer].#
 
 
 [[get_host_timer]]
 * _host_timestamp_ = *get_host_timer*(_device_) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetHostTimer.html[clGetHostTimer].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetHostTimer.html[clGetHostTimer].#
 
 [[check_endianness]]
 * _boolean_, _endianness_ = *check_endianness*(_device_) +

@@ -14,7 +14,7 @@ It is assumed that the reader is familiar with both OpenCL and the Lua programmi
 
 For convenience of reference, this document contains external (deep) links to the 
 http://www.lua.org/manual/5.3/manual.html[Lua Reference Manual] and the 
-https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/[OpenCL Reference Pages].
+https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/[OpenCL Reference Pages].
 
 === Getting and installing
 

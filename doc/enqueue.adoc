@@ -30,20 +30,20 @@ corresponding parameters of the underlying _clEnqueueXxxx(&nbsp;)_ functions.
 
 [[enqueue_read_buffer]]
 * _event_ = *enqueue_read_buffer*(<<queue, _queue_>>, <<buffer, _buffer_>>, <<enqueue_params, _blocking_>>, _offset_, _size_, <<enqueue_params, _ptr_>>, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueReadBuffer.html[clEnqueueReadBuffer].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueReadBuffer.html[clEnqueueReadBuffer].#
 
 [[enqueue_write_buffer]]
 * _event_ = *enqueue_write_buffer*(<<queue, _queue_>>, <<buffer, _buffer_>>, <<enqueue_params, _blocking_>>, _offset_, _size_, <<enqueue_params, _ptr_>>, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueWriteBuffer.html[clEnqueueWriteBuffer].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueWriteBuffer.html[clEnqueueWriteBuffer].#
 
 [[enqueue_copy_buffer]]
 * _event_ = *enqueue_copy_buffer*(<<queue, _queue_>>, <<buffer, _srcbuffer_>>, <<buffer, _dstbuffer_>>, _srcoffset_, _dstoffset_, _size_, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyBuffer.html[clEnqueueCopyBuffer].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueCopyBuffer.html[clEnqueueCopyBuffer].#
 
 [[enqueue_fill_buffer]]
 * _event_ = *enqueue_fill_buffer*(<<queue, _queue_>>, <<buffer, _buffer_>>, _pattern_, _offset_, _size_, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_pattern_: binary string +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueFillBuffer.html[clEnqueueFillBuffer].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueFillBuffer.html[clEnqueueFillBuffer].#
 
 '''
 
@@ -53,7 +53,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueFil
 arg7-8: _bufferrowpitch_, _bufferslicepitch_: integer, +
 arg9-10: _hostrowpitch_, _hostslicepitch_: integer, +
 arg11: <<enqueue_params, _ptr_>>: lightuserdata. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueReadBufferRect.html[clEnqueueReadBufferRect].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueReadBufferRect.html[clEnqueueReadBufferRect].#
 
 [[enqueue_write_buffer_rect]]
 * _event_ = *enqueue_write_buffer_rect*(<<queue, _queue_>>, <<buffer, _buffer_>>, <<enqueue_params, _blocking_>>, _..._, [<<enqueue_params, {_we_}, _ge_>>]) +
@@ -61,33 +61,33 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueRea
 arg7-8: _bufferrowpitch_, _bufferslicepitch_: integer, +
 arg9-10: _hostrowpitch_, _hostslicepitch_: integer, +
 arg11: <<enqueue_params, _ptr_>>: lightuserdata. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueWriteBufferRect.html[clEnqueueWriteBufferRect].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueWriteBufferRect.html[clEnqueueWriteBufferRect].#
 
 [[enqueue_copy_buffer_rect]]
 * _event_ = *enqueue_copy_buffer_rect*(<<queue, _queue_>>, <<buffer, _srcbuffer_>>, <<buffer, _dstbuffer_>>, _..._, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#arg4-6: _srcorigin_, _dstorigin_, _region_ : <<enqueue_params, {integer}[3]>>, +
 arg7-8: _srcrowpitch_, _srcslicepitch_: integer. +
 arg9-10: _dstrowpitch_, _dstslicepitch_: integer. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyBufferRect.html[clEnqueueCopyBufferRect].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueCopyBufferRect.html[clEnqueueCopyBufferRect].#
 
 '''
 
 [[enqueue_map_buffer]]
 * <<enqueue_params, _ptr_>>, _event_ = *enqueue_map_buffer*(<<queue, _queue_>>, <<buffer, _buffer_>>, <<enqueue_params, _blocking_>>, <<mapflags, _mapflags_>>, _offset_, _size_, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_offset_, _size_: integer, +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMapBuffer.html[clEnqueueMapBuffer].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueMapBuffer.html[clEnqueueMapBuffer].#
 
 [[enqueue_unmap_buffer]]
 * _event_ = *enqueue_unmap_buffer*(<<queue, _queue_>>, <<buffer, _buffer_>>, <<enqueue_params, _ptr_>>, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#The <<enqueue_params, _ptr_>> lightuserdata must contain a pointer returned by _cl.enqueue_map_buffer(&nbsp;)_. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueUnmapMemObject.html[clEnqueueUnmapMemObject].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueUnmapMemObject.html[clEnqueueUnmapMemObject].#
 
 '''
 
 [[enqueue_migrate_mem_objects]]
 * _event_ = *enqueue_migrate_mem_objects*(<<queue, _queue_>>, <<migrateflags, _migrateflags_>>, {_memobject_}, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_memobject_: <<buffer, buffer>> | <<image, image>> | <<pipe, pipe>>. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMigrateMemObjects.html[clEnqueueMigrateMemObjects].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueMigrateMemObjects.html[clEnqueueMigrateMemObjects].#
 
 === image commands
 
@@ -96,39 +96,39 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMig
 [small]#_origin_, _region_: <<enqueue_params, {integer}[3]>>, +
 _rowpitch_, _slicepitch_: integer, +
 <<enqueue_params, _ptr_>>: lightuserdata. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueReadImage.html[clEnqueueReadImage].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueReadImage.html[clEnqueueReadImage].#
 
 [[enqueue_write_image]]
 * _event_ = *enqueue_write_image*(<<queue, _queue_>>, <<image, _image_>>, <<enqueue_params, _blocking_>>, _origin_, _region_, _inrowpitch_, _inslicepitch_, <<enqueue_params, _ptr_>>, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_origin_, _region_: <<enqueue_params, {integer}[3]>>, +
 _inrowpitch_, _inslicepitch_: integer, +
 <<enqueue_params, _ptr_>>: lightuserdata. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueWriteImage.html[clEnqueueWriteImage].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueWriteImage.html[clEnqueueWriteImage].#
 
 [[enqueue_fill_image]]
 * _event_ = *enqueue_fill_image*(<<queue, _queue_>>, <<image, _image_>>, _fillcolor_,  _origin_, _region_, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_fillcolor_: binary string, +
 _origin_, _region_: <<enqueue_params, {integer}[3]>>. +
 The _fillcolor_ binary string may encode either a _float_, a _float[4]_, a _int[4]_, or a _uint[4]_. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueFillImage.html[clEnqueueFillImage].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueFillImage.html[clEnqueueFillImage].#
 
 [[enqueue_copy_image]]
 * _event_ = *enqueue_copy_image*(<<queue, _queue_>>, <<image, _srcimage_>>, <<image, _dstimage_>>, _srcorigin_, _dstorigin_, _region_, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_srcorigin_, _dstorigin_: integer, +
 _region_: <<enqueue_params, {integer}[3]>>. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyImage.html[clEnqueueCopyImage].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueCopyImage.html[clEnqueueCopyImage].#
 
 [[enqueue_copy_image_to_buffer]]
 * _event_ = *enqueue_copy_image_to_buffer*(<<queue, _queue_>>, <<image, _srcimage_>>, <<buffer, _dstbuffer_>>, _srcorigin_, _region_, _dstoffset_, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_srcorigin_, _region_: <<enqueue_params, {integer}[3]>>, +
 _dstoffset_: integer. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyImageToBuffer.html[clEnqueueCopyImageToBuffer].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueCopyImageToBuffer.html[clEnqueueCopyImageToBuffer].#
 
 [[enqueue_copy_buffer_to_image]]
 * _event_ = *enqueue_copy_buffer_to_image*(<<queue, _queue_>>, <<buffer, _srcbuffer_>>, <<image, _dstimage_>>, _srcoffset_, _dstorigin_, _region_, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_srcoffset_: integer. +
 _dstorigin_, _region_: <<enqueue_params, {integer}[3]>>, +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCopyBufferToImage.html[clEnqueueCopyBufferToImage].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueCopyBufferToImage.html[clEnqueueCopyBufferToImage].#
 
 '''
 
@@ -138,53 +138,53 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueCop
 Return values: +
 <<enqueue_params, _ptr_>>: lightuserdata, +
 _rowpitch_, _slicepitch_: integer. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMapImage.html[clEnqueueMapImage].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueMapImage.html[clEnqueueMapImage].#
 
 [[enqueue_unmap_image]]
 * _event_ = *enqueue_unmap_image*(<<queue, _queue_>>, <<image, _image_>>, <<enqueue_params, _ptr_>>, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#The <<enqueue_params, _ptr_>> lightuserdata must contain a pointer returned by _cl.enqueue_map_image(&nbsp;)_. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueUnmapMemObject.html[clEnqueueUnmapMemObject].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueUnmapMemObject.html[clEnqueueUnmapMemObject].#
 
 === GL objects commands
 
 [[enqueue_acquire_gl_objects]]
 * _event_ = *enqueue_acquire_gl_objects*(<<queue, _queue_>>, {<<gl_objects, _buffer_>>|<<gl_objects, _image_>>}, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueAcquireGLObjects.html[clEnqueueAcquireGLObjects].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueAcquireGLObjects.html[clEnqueueAcquireGLObjects].#
 
 [[enqueue_release_gl_objects]]
 * _event_ = *enqueue_release_gl_objects*(<<queue, _queue_>>, {<<gl_objects, _buffer_>>|<<gl_objects, _image_>>}, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueReleaseGLObjects.html[clEnqueueReleaseGLObjects].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueReleaseGLObjects.html[clEnqueueReleaseGLObjects].#
 
 === svm commands
 
 [[enqueue_svm_free]]
 * _event_ = *enqueue_svm_free*(<<queue, _queue_>>, {<<svm, _svm_>>}, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMFree.html[clEnqueueSVMFree].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueSVMFree.html[clEnqueueSVMFree].#
 
 [[enqueue_svm_memcpy]]
 * _event_ = *enqueue_svm_memcpy*(<<queue, _queue_>>, <<enqueue_params, _blocking_>>, <<enqueue_params, _dstptr_>>, <<enqueue_params, _srcptr_>>, _size_, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMMemcpy.html[clEnqueueSVMMemcpy].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueSVMMemcpy.html[clEnqueueSVMMemcpy].#
 
 [[enqueue_svm_mem_fill]]
 * _event_ = *enqueue_svm_mem_fill*(<<queue, _queue_>>, <<enqueue_params, _ptr_>>, _pattern_, _size_, [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_pattern_: binary string +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMMemFill.html[clEnqueueSVMMemFill].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueSVMMemFill.html[clEnqueueSVMMemFill].#
 
 '''
 
 [[enqueue_svm_map]]
 * _event_ = *enqueue_svm_map*(<<queue, _queue_>>, <<enqueue_params, _blocking_>>, <<mapflags, _mapflags_>>, <<enqueue_params, _ptr_>>, _size_, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMMap.html[clEnqueueSVMMap].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueSVMMap.html[clEnqueueSVMMap].#
 
 [[enqueue_svm_unmap]]
 * _event_ = *enqueue_svm_unmap*(<<queue, _queue_>>, <<enqueue_params, _ptr_>>, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMUnmap.html[clEnqueueSVMUnmap].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueSVMUnmap.html[clEnqueueSVMUnmap].#
 
 '''
 
 [[enqueue_svm_migrate_mem]]
 * _event_ = *enqueue_svm_migrate_mem*(<<queue, _queue_>>, <<migrateflags, _migrateflags_>>, {<<svm, _svm_>>}, {_offset_}, {_size_}, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVMMigrateMem.html[clEnqueueSVMMigrateMem].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueSVMMigrateMem.html[clEnqueueSVMMigrateMem].#
 
 
 === kernel commands
@@ -193,7 +193,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueSVM
 * _event_ = *enqueue_ndrange_kernel*(<<queue, _queue_>>, <<kernel, _kernel_>>, _N_, [_globoffset_], _globsize_, [_locsize_], [<<enqueue_params, {_we_}, _ge_>>]) +
 [small]#_N_: 1, 2 or 3 (work dimension), +
 _globoffset_, _globsize_, _locsize_: <<enqueue_params, {integer}[3]>> (of which only the first _N_ are meaningful), +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueNDRangeKernel.html[clEnqueueNDRangeKernel].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueNDRangeKernel.html[clEnqueueNDRangeKernel].#
 
 [[enqueue_task]]
 * _event_ = *enqueue_task*(<<queue, _queue_>>, <<kernel, _kernel_>>, [<<enqueue_params, {_we_}, _ge_>>]) +
@@ -202,7 +202,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueNDR
 ////
 [[enqueue_native_kernel]]
 * _event_ = *enqueue_native_kernel*(<<queue, _queue_>>, @@, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueNativeKernel.html[clEnqueueNativeKernel].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueNativeKernel.html[clEnqueueNativeKernel].#
 ////
 
 === synchronization
@@ -210,26 +210,26 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueNDR
 [[flush]]
 * *flush*(<<queue, _queue_>>) +
 [small]#Blocks until all previously enqueued commands have been submitted. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clFlush.html[clFlush].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clFlush.html[clFlush].#
 
 [[finish]]
 * *finish*(<<queue, _queue_>>) +
 [small]#Blocks until all previously enqueued commands have been completed. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clFinish.html[clFinish].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clFinish.html[clFinish].#
 
 [[enqueue_marker]]
 * _event_ = *enqueue_marker*(<<queue, _queue_>>, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueMarkerWithWaitList.html[clEnqueueMarkerWithWaitList].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueMarkerWithWaitList.html[clEnqueueMarkerWithWaitList].#
 
 [[enqueue_barrier]]
 * _event_ = *enqueue_barrier*(<<queue, _queue_>>, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueueBarrierWithWaitList.html[clEnqueueBarrierWithWaitList].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueueBarrierWithWaitList.html[clEnqueueBarrierWithWaitList].#
 
 ////
 
 [[enqueue_]]
 * _event_ = **(<<queue, _queue_>>, @@, [<<enqueue_params, {_we_}, _ge_>>]) +
-[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clEnqueue.html[].#
+[small]#Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clEnqueue.html[].#
 
 arg3: __, +
 __: binary string +

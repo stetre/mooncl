@@ -60,7 +60,7 @@ Values: '_snorm int8_', '_snorm int16_', '_unorm int8_', '_unorm int16_', '_unor
 '_context_': <<context, context>> +
 '_device_': <<device, device>> +
 '_device default_': <<queue, queue>> +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetCommandQueueInfo.html[clGetCommandQueueInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetCommandQueueInfo.html[clGetCommandQueueInfo].#
 
 
 [[commandtype]]
@@ -73,7 +73,7 @@ Values: '_ndrange kernel_', '_task_', '_native kernel_', '_read buffer_', '_writ
 '_num devices_': integer +
 '_devices_': {<<device, device>>} +
 '_properties_': <<contextproperties, contextproperties>> +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetContextInfo.html[clGetContextInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetContextInfo.html[clGetContextInfo].#
 
 
 [[deviceinfo]]
@@ -170,7 +170,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetContext
 '_il version_': string +
 '_max num sub groups_': integer +
 '_sub group independent forward progress_': boolean +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetDeviceInfo.html[clGetDeviceInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetDeviceInfo.html[clGetDeviceInfo].#
 
 
 [[devicelocalmemtype]]
@@ -188,7 +188,7 @@ Values: '_none_', '_read only cache_', '_read write cache_'.#
 '_command queue_': <<queue, queue>> +
 '_context_': <<context, context>> +
 '_command execution status_': <<executionstatus, executionstatus>> or an integer code +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetEventInfo.html[clGetEventInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetEventInfo.html[clGetEventInfo].#
 
 
 [[executionstatus]]
@@ -203,24 +203,24 @@ Values: '_nearest_', '_linear_'.#
 [small]#*glcontextinfo*: cl.GL_CONTEXT_INFO (_cl_gl_context_info_) +
 '_current device_': <<device, device>> +
 '_devices_': {<<device, device>>} +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLContextInfoKHR.html[clGetGLContextInfoKHR].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetGLContextInfoKHR.html[clGetGLContextInfoKHR].#
 
 [[globjecttype]]
 [small]#*globjecttype*: - (_GL_OBJECT_XXX_) +
 Values: '_buffer_', '_texture 2d_', '_texture 3d_', '_renderbuffer_', '_texture 2d array_', '_texture 1d_', '_texture 1d array_', '_texture buffer_'. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLObjectInfo.html[clGetGLObjectInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetGLObjectInfo.html[clGetGLObjectInfo].#
 
 [[gltextureinfo]]
 [small]#*gltextureinfo*: cl.GL_TEXTURE_INFO (_cl_gl_texture_info_) +
 '_texture target_': <<gltexturetarget, gltexturetarget>> +
 '_mipmap level_': integer +
 '_num samples_': integer +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetGLTextureInfo.html[clGetGLTextureInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetGLTextureInfo.html[clGetGLTextureInfo].#
 
 [[gltexturetarget]]
 [small]#*gltexturetarget*: - (_GL_TEXTURE_XXX_) +
 Values: '_1d_', '_2d_', '_3d_', '_1d array_', '_2d array_', '_buffer_', '_cube map_', '_cube map positive x_', '_cube map negative x_', '_cube map positive y_', '_cube map negative y_', '_cube map positive z_', '_cube map negative z_', '_rectangle_', '_2d multisample_', '_2d multisample array_'. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateFromGLTexture.html[clCreateFromGLTexture].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateFromGLTexture.html[clCreateFromGLTexture].#
 
 [[imageinfo]]
 [small]#*imageinfo*: cl.IMAGE_XXX  (_cl_image_info_) +
@@ -230,7 +230,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateFrom
 '_width_', '_height_', '_depth_': integer +
 '_num mip levels_': integer +
 '_num samples_': integer +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetImageInfo.html[clGetImageInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetImageInfo.html[clGetImageInfo].#
 
 
 [[kernelarginfo]]
@@ -240,13 +240,13 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetImageIn
 '_address qualifier_': <<argaddressqualifier, argaddressqualifier>> +
 '_access qualifier_': <<argaccessqualifier, argaccessqualifier>> +
 '_type qualifier_': <<argtypeflags, argtypeflags>> +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelArgInfo.html[clGetKernelArgInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetKernelArgInfo.html[clGetKernelArgInfo].#
 
 [[kernelexecinfo]]
 [small]#*kernelexecinfo*: cl.KERNEL_EXEC_INFO_XXX  (_cl_kernel_exec_info_) +
 '_svm fine grain system_': boolean +
 '_svm ptrs_': {lightuserdata} (containing valid <<svm, svm>> _void*_ pointers) +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetKernelExecInfo.html[clSetKernelExecInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clSetKernelExecInfo.html[clSetKernelExecInfo].#
 
 [[kernelinfo]]
 [small]#*kernelinfo*: cl.KERNEL_XXX  (_cl_kernel_info_) +
@@ -258,7 +258,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clSetKernelE
 '_compile num sub groups_': integer +
 '_program_': <<program, program>> +
 '_context_': <<context, context>> +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelInfo.html[clGetKernelInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetKernelInfo.html[clGetKernelInfo].#
 
 [[kernelsubgroupinfo]]
 [small]#*kernelsubgroupinfo*: cl.KERNEL_XXX  (_cl_kernel_sub_group_info_) +
@@ -268,7 +268,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelI
 '_local size for sub group count_': integer -> {integer} +
 '_max num sub groups_': _nil_ -> integer +
 '_compile num sub groups_': _nil_ -> integer +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelSubGroupInfo.html[clGetKernelSubGroupInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetKernelSubGroupInfo.html[clGetKernelSubGroupInfo].#
 
 [[kernelworkgroupinfo]]
 [small]#*kernelworkgroupinfo*: cl.KERNEL_XXX  (_cl_kernel_work_group_info_) +
@@ -278,7 +278,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelS
 '_private mem size_': integer +
 '_global work size_': {integer} +
 '_compile work group size_': {integer} +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelWorkGroupInfo.html[clGetKernelWorkGroupInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetKernelWorkGroupInfo.html[clGetKernelWorkGroupInfo].#
 
 [[meminfo]]
 [small]#*meminfo*: cl.MEM_XXX  (_cl_mem_info_) +
@@ -292,7 +292,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetKernelW
 '_associated memobject_':  <<buffer, buffer>> or  <<image, image>> or  <<pipe, pipe>> or _nil_ +
 '_uses svm pointer_': boolean +
 '_host ptr_': lightuserdata (_void*_) or _nil_ +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetMemObjectInfo.html[clGetMemObjectInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetMemObjectInfo.html[clGetMemObjectInfo].#
 
 
 [[memobjecttype]]
@@ -303,7 +303,7 @@ Values: '_buffer_', '_image2d_', '_image3d_', '_image2d array_', '_image1d_', '_
 [small]#*pipeinfo*: cl.PIPE_XXX  (_cl_pipe_info_) +
 '_packet size_': integer +
 '_max packets_': integer +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPipeInfo.html[clGetPipeInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetPipeInfo.html[clGetPipeInfo].#
 
 [[platforminfo]]
 [small]#*platforminfo*: cl.PLATFORM_XXX  (_cl_platform_info_) +
@@ -313,7 +313,7 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPipeInf
 '_vendor_': string +
 '_extensions_': string +
 '_host timer resolution_': integer +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetPlatformInfo.html[clGetPlatformInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetPlatformInfo.html[clGetPlatformInfo].#
 
 [[primtype]]
 [small]#*primtype*: OpenCL primitive types (_cl_char_, _cl_int_, etc.) +
@@ -322,7 +322,7 @@ Values: '_char_', '_uchar_', '_short_', '_ushort_', '_int_', '_uint_', '_long_',
 [[profilinginfo]]
 [small]#*profilinginfo*: cl.PROFILING_XXX  (_cl_profiling_info_) +
 '_command queued_', '_command submit_', '_command start_', '_command end_', '_command complete_': integer (denoting time in nanoseconds) +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetEventProfilingInfo.html[clGetEventProfilingInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetEventProfilingInfo.html[clGetEventProfilingInfo].#
 
 [[programbinarytype]]
 [small]#*programbinarytype*: cl.PROGRAM_BINARY_TYPE_XXX  (_cl_program_binary_type_) +
@@ -335,7 +335,7 @@ Values: '_none_', '_compiled object_', '_library_', '_executable_', '_intermedia
 '_options_': string +
 '_log_': string +
 '_global variable total size_': integer +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetProgramBuildInfo.html[clGetProgramBuildInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetProgramBuildInfo.html[clGetProgramBuildInfo].#
 
 [[programinfo]]
 [small]#*programinfo*: cl.PROGRAM_XXX  (_cl_program_info_) +
@@ -349,17 +349,17 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetProgram
 '_binary sizes_': {integer} +
 '_binaries_': {string} +
 '_il_': binary string +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetProgramInfo.html[clGetProgramInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetProgramInfo.html[clGetProgramInfo].#
 
 [[queuepriority]]
 [small]#*queuepriority*: cl.QUEUE_PRIORITY_XXX_KHR  (_cl_queue_priority_khr_) +
 Values: '_high_', '_medium_', '_low_'. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateCommandQueueWithProperties.html[clCreateCommandQueueWithProperties].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateCommandQueueWithProperties.html[clCreateCommandQueueWithProperties].#
 
 [[queuethrottle]]
 [small]#*queuethrottle*: cl.QUEUE_THROTTLE_XXX_KHR  (_cl_queue_throttle_khr_) +
 Values: '_high_', '_med_', '_low_'. +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateCommandQueueWithProperties.html[clCreateCommandQueueWithProperties].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clCreateCommandQueueWithProperties.html[clCreateCommandQueueWithProperties].#
 
 [[samplerinfo]]
 [small]#*samplerinfo*: cl.SAMPLER_XXX  (_cl_sampler_info_) +
@@ -371,6 +371,6 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clCreateComm
 '_mip filter mode_': <<filtermode, filtermode>> +
 '_lod min_': integer +
 '_lod max_': integer +
-Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.1/docs/man/xhtml/clGetSamplerInfo.html[clGetSamplerInfo].#
+Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetSamplerInfo.html[clGetSamplerInfo].#
 
 
