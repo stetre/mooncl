@@ -42,15 +42,11 @@ Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGetEventPro
 
 [[set_event_callback]]
 * *set_event_callback*(_event_, _type_) +
+_status_ = *check_event_callback*(_event_, _type_) +
 [small]#_type_: '_submitted_', '_running_', or '_complete_'. +
-This function registers a C callback that, when called, just stores the information it receives,
-i.e. the execution status of the command identified by the the event. 
-Use the <<check_event_callback, check_event_callback>>(&nbsp;) function to check if the C callback was called, and to retrieve the command execution status. +
+_status_: boolean | integer (error code). +
+The _set_event_callback(&nbsp;)_ function registers a C callback that, when called by the OpenCL driver,
+just stores the execution status information passed to it. The application can then poll the status
+information using the _check_event_callback_(&nbsp;) function. +
 Rfr: https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clSetEventCallback.html[clSetEventCallback].#
-
-[[check_event_callback]]
-* _status_ = *check_event_callback*(_event_, _type_) +
-[small]#Checks if the C callback registered with <<set_event_callback, set_event_callback>>(&nbsp;) was executed. Returns the status that was passed to the callback, which
-may be a <<executionstatus, executionstatus>> value or an integer code, or _false_ if the callback was not executed.#
-
 

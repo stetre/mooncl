@@ -216,7 +216,7 @@ static int CheckEventCallback(lua_State *L)
     if(status < 0)
         lua_pushinteger(L, status);
     else
-        pushexecutionstatus(L, status);
+        lua_pushboolean(L, 1); // pushexecutionstatus(L, status);
     return 1;
     }
  

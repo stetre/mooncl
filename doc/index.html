@@ -1476,20 +1476,13 @@ Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clGe
 <ul>
 <li>
 <p><strong>set_event_callback</strong>(<em>event</em>, <em>type</em>)<br>
+<em>status</em> = <strong>check_event_callback</strong>(<em>event</em>, <em>type</em>)<br>
 <span class="small"><em>type</em>: '<em>submitted</em>', '<em>running</em>', or '<em>complete</em>'.<br>
-This function registers a C callback that, when called, just stores the information it receives,
-i.e. the execution status of the command identified by the the event.
-Use the <a href="#check_event_callback">check_event_callback</a>(&nbsp;) function to check if the C callback was called, and to retrieve the command execution status.<br>
+<em>status</em>: boolean | integer (error code).<br>
+The <em>set_event_callback(&nbsp;)</em> function registers a C callback that, when called by the OpenCL driver,
+just stores the execution status information passed to it. The application can then poll the status
+information using the <em>check_event_callback</em>(&nbsp;) function.<br>
 Rfr: <a href="https://www.khronos.org/registry/OpenCL/sdk/2.2/docs/man/html/clSetEventCallback.html">clSetEventCallback</a>.</span></p>
-</li>
-</ul>
-</div>
-<div id="check_event_callback" class="ulist">
-<ul>
-<li>
-<p><em>status</em> = <strong>check_event_callback</strong>(<em>event</em>, <em>type</em>)<br>
-<span class="small">Checks if the C callback registered with <a href="#set_event_callback">set_event_callback</a>(&nbsp;) was executed. Returns the status that was passed to the callback, which
-may be a <a href="#executionstatus">executionstatus</a> value or an integer code, or <em>false</em> if the callback was not executed.</span></p>
 </li>
 </ul>
 </div>
