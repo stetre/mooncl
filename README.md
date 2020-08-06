@@ -31,7 +31,7 @@ mooncl$ sudo make install
 
 To use MoonCL, you'll also need the [OpenCL ICD loader](https://github.com/KhronosGroup/OpenCL-ICD-Loader)
 and at least one 
-[OpenCL capable device](https://www.khronos.org/conformance/adopters/conformant-products#opencl) with
+[OpenCL capable device](https://www.khronos.org/conformance/adopters/conformant-products/opencl) with
 [updated drivers](https://www.howtogeek.com/242045/how-to-get-the-latest-nvidia-amd-or-intel-graphics-drivers-on-ubuntu/).
  
 On Ubuntu, you can install the OpenCL ICD loader with:
