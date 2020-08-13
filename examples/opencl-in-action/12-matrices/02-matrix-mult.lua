@@ -48,9 +48,9 @@ local t = cl.now()
 local a_mem = cl.malloc('float', A)
 local b_mem = cl.malloc('float', B)
 local c_mem = cl.malloc(a_mem:size())
-a_buf = cl.create_buffer(context, cl.MEM_READ_ONLY|cl.MEM_COPY_HOST_PTR, a_mem:size(), a_mem:ptr())
-b_buf = cl.create_buffer(context, cl.MEM_READ_WRITE|cl.MEM_COPY_HOST_PTR, b_mem:size(), b_mem:ptr()) 
-c_buf = cl.create_buffer(context, cl.MEM_WRITE_ONLY, c_mem:size())
+local a_buf = cl.create_buffer(context, cl.MEM_READ_ONLY|cl.MEM_COPY_HOST_PTR, a_mem:size(), a_mem:ptr())
+local b_buf = cl.create_buffer(context, cl.MEM_READ_WRITE|cl.MEM_COPY_HOST_PTR, b_mem:size(), b_mem:ptr()) 
+local c_buf = cl.create_buffer(context, cl.MEM_WRITE_ONLY, c_mem:size())
 
 -- Determine device memory parameters
 local global_size = (N/4 * (N/4 + 1))/2
