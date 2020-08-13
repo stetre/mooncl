@@ -30,9 +30,9 @@ local function new_mat(n, val)
 end
 
 local N = 128 -- we're working with NxN matrices
-A = new_mat(N)
-B = new_mat(N)
-C = new_mat(N, 0) -- A*B for result check
+local A = new_mat(N)
+local B = new_mat(N)
+local C = new_mat(N, 0) -- A*B for result check
 local t = cl.now()
 for i = 1, N do
     for j = 1, N do
