@@ -1,33 +1,21 @@
-/**********************************************************************************
- * Copyright (c) 2008-2016 The Khronos Group Inc.
+/*******************************************************************************
+ * Copyright (c) 2008-2020 The Khronos Group Inc.
  *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and/or associated documentation files (the
- * "Materials"), to deal in the Materials without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Materials, and to
- * permit persons to whom the Materials are furnished to do so, subject to
- * the following conditions:
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * The above copyright notice and this permission notice shall be included
- * in all copies or substantial portions of the Materials.
+ *    http://www.apache.org/licenses/LICENSE-2.0
  *
- * MODIFICATIONS TO THIS FILE MAY MEAN IT NO LONGER ACCURATELY REFLECTS
- * KHRONOS STANDARDS. THE UNMODIFIED, NORMATIVE VERSIONS OF KHRONOS
- * SPECIFICATIONS AND HEADER INFORMATION ARE LOCATED AT
- *    https://www.khronos.org/registry/
- *
- * THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
- * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
- * MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
- **********************************************************************************/
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
 /*****************************************************************************\
 
-Copyright (c) 2013-2016 Intel Corporation All Rights Reserved.
+Copyright (c) 2013-2019 Intel Corporation All Rights Reserved.
 
 THESE MATERIALS ARE PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -106,73 +94,73 @@ typedef cl_uint cl_dx9_device_set_intel;
 
 extern CL_API_ENTRY cl_int CL_API_CALL
 clGetDeviceIDsFromDX9INTEL(
-    cl_platform_id              /* platform */,
-    cl_dx9_device_source_intel  /* dx9_device_source */,
-    void*                       /* dx9_object */,
-    cl_dx9_device_set_intel     /* dx9_device_set */,
-    cl_uint                     /* num_entries */, 
-    cl_device_id*               /* devices */, 
-    cl_uint*                    /* num_devices */) CL_EXT_SUFFIX__VERSION_1_1;
+    cl_platform_id              platform,
+    cl_dx9_device_source_intel  dx9_device_source,
+    void*                       dx9_object,
+    cl_dx9_device_set_intel     dx9_device_set,
+    cl_uint                     num_entries,
+    cl_device_id*               devices,
+    cl_uint*                    num_devices) CL_EXT_SUFFIX__VERSION_1_1;
 
 typedef CL_API_ENTRY cl_int (CL_API_CALL* clGetDeviceIDsFromDX9INTEL_fn)(
-    cl_platform_id              /* platform */,
-    cl_dx9_device_source_intel  /* dx9_device_source */,
-    void*                       /* dx9_object */,
-    cl_dx9_device_set_intel     /* dx9_device_set */,
-    cl_uint                     /* num_entries */, 
-    cl_device_id*               /* devices */, 
-    cl_uint*                    /* num_devices */) CL_EXT_SUFFIX__VERSION_1_1;
+    cl_platform_id              platform,
+    cl_dx9_device_source_intel  dx9_device_source,
+    void*                       dx9_object,
+    cl_dx9_device_set_intel     dx9_device_set,
+    cl_uint                     num_entries,
+    cl_device_id*               devices,
+    cl_uint*                    num_devices) CL_EXT_SUFFIX__VERSION_1_1;
 
 extern CL_API_ENTRY cl_mem CL_API_CALL
 clCreateFromDX9MediaSurfaceINTEL(
-    cl_context                  /* context */,
-    cl_mem_flags                /* flags */,
-    IDirect3DSurface9*          /* resource */,
-    HANDLE                      /* sharedHandle */,
-    UINT                        /* plane */,
-    cl_int*                     /* errcode_ret */) CL_EXT_SUFFIX__VERSION_1_1;
+    cl_context                  context,
+    cl_mem_flags                flags,
+    IDirect3DSurface9*          resource,
+    HANDLE                      sharedHandle,
+    UINT                        plane,
+    cl_int*                     errcode_ret) CL_EXT_SUFFIX__VERSION_1_1;
 
 typedef CL_API_ENTRY cl_mem (CL_API_CALL *clCreateFromDX9MediaSurfaceINTEL_fn)(
-    cl_context                  /* context */,
-    cl_mem_flags                /* flags */,
-    IDirect3DSurface9*          /* resource */,
-    HANDLE                      /* sharedHandle */,
-    UINT                        /* plane */,
-    cl_int*                     /* errcode_ret */) CL_EXT_SUFFIX__VERSION_1_1;
+    cl_context                  context,
+    cl_mem_flags                flags,
+    IDirect3DSurface9*          resource,
+    HANDLE                      sharedHandle,
+    UINT                        plane,
+    cl_int*                     errcode_ret) CL_EXT_SUFFIX__VERSION_1_1;
 
 extern CL_API_ENTRY cl_int CL_API_CALL
 clEnqueueAcquireDX9ObjectsINTEL(
-    cl_command_queue            /* command_queue */,
-    cl_uint                     /* num_objects */,
-    const cl_mem*               /* mem_objects */,
-    cl_uint                     /* num_events_in_wait_list */,
-    const cl_event*             /* event_wait_list */,
-    cl_event*                   /* event */) CL_EXT_SUFFIX__VERSION_1_1;
+    cl_command_queue            command_queue,
+    cl_uint                     num_objects,
+    const cl_mem*               mem_objects,
+    cl_uint                     num_events_in_wait_list,
+    const cl_event*             event_wait_list,
+    cl_event*                   event) CL_EXT_SUFFIX__VERSION_1_1;
 
 typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueAcquireDX9ObjectsINTEL_fn)(
-    cl_command_queue            /* command_queue */,
-    cl_uint                     /* num_objects */,
-    const cl_mem*               /* mem_objects */,
-    cl_uint                     /* num_events_in_wait_list */,
-    const cl_event*             /* event_wait_list */,
-    cl_event*                   /* event */) CL_EXT_SUFFIX__VERSION_1_1;
+    cl_command_queue            command_queue,
+    cl_uint                     num_objects,
+    const cl_mem*               mem_objects,
+    cl_uint                     num_events_in_wait_list,
+    const cl_event*             event_wait_list,
+    cl_event*                   event) CL_EXT_SUFFIX__VERSION_1_1;
 
 extern CL_API_ENTRY cl_int CL_API_CALL
 clEnqueueReleaseDX9ObjectsINTEL(
-    cl_command_queue            /* command_queue */,
-    cl_uint                     /* num_objects */,
-    cl_mem*                     /* mem_objects */,
-    cl_uint                     /* num_events_in_wait_list */,
-    const cl_event*             /* event_wait_list */,
-    cl_event*                   /* event */) CL_EXT_SUFFIX__VERSION_1_1;
+    cl_command_queue            command_queue,
+    cl_uint                     num_objects,
+    cl_mem*                     mem_objects,
+    cl_uint                     num_events_in_wait_list,
+    const cl_event*             event_wait_list,
+    cl_event*                   event) CL_EXT_SUFFIX__VERSION_1_1;
 
 typedef CL_API_ENTRY cl_int (CL_API_CALL *clEnqueueReleaseDX9ObjectsINTEL_fn)(
-    cl_command_queue            /* command_queue */,
-    cl_uint                     /* num_objects */,
-    cl_mem*                     /* mem_objects */,
-    cl_uint                     /* num_events_in_wait_list */,
-    const cl_event*             /* event_wait_list */,
-    cl_event*                   /* event */) CL_EXT_SUFFIX__VERSION_1_1;
+    cl_command_queue            command_queue,
+    cl_uint                     num_objects,
+    cl_mem*                     mem_objects,
+    cl_uint                     num_events_in_wait_list,
+    const cl_event*             event_wait_list,
+    cl_event*                   event) CL_EXT_SUFFIX__VERSION_1_1;
 
 #ifdef __cplusplus
 }

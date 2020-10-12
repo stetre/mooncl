@@ -35,6 +35,7 @@
 #include "lauxlib.h"
 #include "compat-5.3.h"
 
+#define CL_TARGET_OPENCL_VERSION 220
 #include "CL/opencl.h"
 
 #define MOONCL_VERSION      "0.1"
