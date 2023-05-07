@@ -6,7 +6,7 @@ An hostmem object encapsulates (a pointer to) host accessible memory, with metho
 to access it from Lua and to retrieve pointers to any of its locations in form of 
 http://www.lua.org/manual/5.3/manual.html#lua_pushlightuserdata[lightuserdata].
 
-(Note that hostmem objets are specific to MoonCL, i.e. they do not 
+(Note that hostmem objects are specific to MoonCL, i.e. they do not
 correspond to OpenCL objects).
 
 The memory encapsulated by an hostmem object may be either host memory allocated via 
